@@ -45,46 +45,46 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Dark theme styles with enhanced contrast */
+/* Dark theme styles with #45a29e integrated into gradient */
 body.dark-theme {
-    background: linear-gradient(135deg, #0b0c10, #1f2833);
+    background: linear-gradient(135deg, #0b0c10, #1f2833, #45a29e);
     color: #c5c6c7; /* Light grey text color for contrast */
 }
 
 header.dark-theme {
-    background: linear-gradient(135deg, #1f2833, #0b0c10);
-    color: #66fcf1; /* Light blue-green color for contrast */
-    border-bottom-color: #45a29e; /* Medium blue-green color for border */
+    background: linear-gradient(135deg, #1f2833, #0b0c10, #45a29e);
+    color: #c5c6c7; /* Light grey for text */
+    border-bottom-color: #45a29e; /* Same color for border */
 }
 
 main.dark-theme {
-    background: linear-gradient(135deg, #1f2833, #0b0c10);
+    background: linear-gradient(135deg, #1f2833, #0b0c10, #45a29e);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 a.dark-theme {
-    color: #66fcf1; /* Light blue-green color for links in dark theme */
+    color: #45a29e; /* Using #45a29e for links in dark theme */
 }
 
-/* Light theme styles with enhanced contrast */
+/* Light theme styles with #45a29e integrated into gradient */
 body.light-theme {
-    background: linear-gradient(135deg, #ffffff, #e6e6e6);
+    background: linear-gradient(135deg, #ffffff, #e6e6e6, #45a29e);
     color: #333333; /* Dark grey text color for contrast */
 }
 
 header.light-theme {
-    background: linear-gradient(135deg, #f0f0f0, #e6e6e6);
-    color: #1f2833; /* Dark color for contrast in light theme */
-    border-bottom-color: #45a29e;
+    background: linear-gradient(135deg, #f0f0f0, #e6e6e6, #45a29e);
+    color: #333333; /* Dark color for contrast in light theme */
+    border-bottom-color: #45a29e; /* Same color for border */
 }
 
 main.light-theme {
-    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    background: linear-gradient(135deg, #ffffff, #f0f0f0, #45a29e);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 a.light-theme {
-    color: #1f2833; /* Dark color for links in light theme */
+    color: #45a29e; /* Using #45a29e for links in light theme */
 }
 
 /* Button styling */
