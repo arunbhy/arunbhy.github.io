@@ -45,46 +45,46 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Blue-Green theme styles (Default Theme) */
+body {
+    background: linear-gradient(45deg, #2c3e50, #34495e, #1abc9c);
+    color: #ecf0f1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ecf0f1;
+    border-bottom-color: #1abc9c;
+}
+
+main {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #1abc9c;
+}
+
 /* Dark theme styles */
 body.dark-theme {
-    background: #000000; /* Pure black background */
+    background: linear-gradient(45deg, #0f0f0f, #1c1c1c, #292929); /* Mix of dark greys */
     color: #f1f1f1; /* Slightly off-white text color */
 }
 
 header.dark-theme {
     background: rgba(0, 0, 0, 0.9); /* Darker header background */
     color: #f1f1f1;
-    border-bottom-color: #1abc9c;
+    border-bottom-color: #555555; /* Darker border color for contrast */
 }
 
 main.dark-theme {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(15, 15, 15, 0.85);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 a.dark-theme {
     color: #1abc9c;
-}
-
-/* Custom light theme styles */
-body.light-theme {
-    background: linear-gradient(45deg, #e0e4e8, #dfe7ec, #f5f7fa); /* Softer, more neutral tones */
-    color: #2c3e50;
-}
-
-header.light-theme {
-    background: #ffffff;
-    color: #2c3e50;
-    border-bottom-color: #3498db;
-}
-
-main.light-theme {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-a.light-theme {
-    color: #3498db;
 }
 
 /* Button styling */
