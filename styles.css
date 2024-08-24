@@ -47,28 +47,28 @@ a:hover {
 
 /* Dark theme styles */
 body.dark-theme {
-    background: linear-gradient(45deg, #2c3e50, #34495e, #1abc9c);
-    color: #ecf0f1;
+    background: #000000; /* Pure black background */
+    color: #f1f1f1; /* Slightly off-white text color */
 }
 
 header.dark-theme {
-    background: rgba(0, 0, 0, 0.8);
-    color: #ecf0f1;
+    background: rgba(0, 0, 0, 0.9); /* Darker header background */
+    color: #f1f1f1;
     border-bottom-color: #1abc9c;
 }
 
 main.dark-theme {
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 a.dark-theme {
     color: #1abc9c;
 }
 
-/* Light theme styles */
+/* Custom light theme styles */
 body.light-theme {
-    background: linear-gradient(45deg, #f3f4f7, #e5e8ec, #ffffff);
+    background: linear-gradient(45deg, #e0e4e8, #dfe7ec, #f5f7fa); /* Softer, more neutral tones */
     color: #2c3e50;
 }
 
