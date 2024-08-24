@@ -1,0 +1,17 @@
+title: "Arunbh Yashaswi's GitHub Page"
+description: "Showcasing my work in Data Science and AI."
+theme: jekyll-theme-cayman
+url: "https://arunbhyashaswi.github.io"
+baseurl: "/"
+
+header_pages:
+  - index.md
+  - about.md
+  - projects.md
+  - research.md
+
+social_links:
+  - name: GitHub
+    url: https://github.com/arunbhyashaswi
+  - name: LinkedIn
+    url: https://linkedin.com/in/arunbhyashaswi
