@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background 0.5s ease, color 0.5s ease;
+    overflow: hidden; /* Prevent scrolling for full-screen background animation */
 }
 
 header {
@@ -21,6 +22,9 @@ main {
     max-width: 800px;
     margin: auto;
     transition: background 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    z-index: 1; /* Ensure content is above animations */
+    background: rgba(255, 255, 255, 0.8); /* Light background for readability */
 }
 
 h1, h2 {
@@ -45,21 +49,70 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Background animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11, 12, 16, 0.8), rgba(31, 40, 51, 0.8), rgba(69, 162, 158, 0.8));
+    z-index: -1;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Futuristic dot animation */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(69, 162, 158, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    animation: dotMove 10s linear infinite;
+}
+
+@keyframes dotMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
 /* Dark theme styles with #45a29e integrated into gradient */
 body.dark-theme {
-    background: linear-gradient(135deg, #0b0c10, #1f2833, #45a29e);
-    color: #c5c6c7; /* Light grey text color for contrast */
+    background: none; /* Remove base background for dark theme */
+}
+
+body.dark-theme::before {
+    background: linear-gradient(135deg, rgba(11, 12, 16, 0.8), rgba(31, 40, 51, 0.8), rgba(69, 162, 158, 0.8));
 }
 
 header.dark-theme {
-    background: linear-gradient(135deg, #1f2833, #0b0c10, #45a29e);
     color: #c5c6c7; /* Light grey for text */
     border-bottom-color: #45a29e; /* Same color for border */
 }
 
 main.dark-theme {
-    background: linear-gradient(135deg, #1f2833, #0b0c10, #45a29e);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Dark background for readability in dark theme */
 }
 
 a.dark-theme {
@@ -68,19 +121,20 @@ a.dark-theme {
 
 /* Light theme styles with #45a29e integrated into gradient */
 body.light-theme {
-    background: linear-gradient(135deg, #ffffff, #e6e6e6, #45a29e);
-    color: #333333; /* Dark grey text color for contrast */
+    background: none; /* Remove base background for light theme */
+}
+
+body.light-theme::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(230, 230, 230, 0.8), rgba(69, 162, 158, 0.8));
 }
 
 header.light-theme {
-    background: linear-gradient(135deg, #f0f0f0, #e6e6e6, #45a29e);
     color: #333333; /* Dark color for contrast in light theme */
     border-bottom-color: #45a29e; /* Same color for border */
 }
 
 main.light-theme {
-    background: linear-gradient(135deg, #ffffff, #f0f0f0, #45a29e);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 a.light-theme {
@@ -99,6 +153,7 @@ button {
     bottom: 10px;
     right: 10px;
     transition: background-color 0.3s ease;
+    z-index: 2; /* Ensure button is above animations */
 }
 
 button:hover {
