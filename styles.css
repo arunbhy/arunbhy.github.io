@@ -1,3 +1,4 @@
+
 /* Base styles */
 body {
     font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background 0.5s ease, color 0.5s ease;
+    overflow: auto; /* Enable scrolling */
 }
 
 header {
@@ -12,6 +14,8 @@ header {
     text-align: center;
     transition: background 0.5s ease;
     border-bottom: 2px solid;
+    position: relative; /* Relative positioning for layering */
+    z-index: 2; /* Ensure header is above animations */
 }
 
 main {
@@ -20,8 +24,8 @@ main {
     max-width: 800px;
     margin: auto;
     transition: background 0.5s ease, box-shadow 0.5s ease;
-    position: relative;
-    z-index: 1; /* Ensure content is above animations */
+    position: relative; /* Relative positioning for layering */
+    z-index: 2; /* Ensure main content is above animations */
     background: rgba(255, 255, 255, 0.8); /* Light background for readability */
 }
 
@@ -47,10 +51,10 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Background animation */
+/* Background animations */
 body::before, body::after {
     content: '';
-    position: fixed; /* Change to fixed to keep animations fixed while scrolling */
+    position: fixed; /* Fixed positioning for background animations */
     top: 0;
     left: 0;
     width: 100%;
@@ -81,7 +85,7 @@ body::before {
 body::after {
     background: radial-gradient(circle, rgba(69, 162, 158, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
-    z-index: -2;
+    z-index: -2; /* Keep dots behind gradient */
     animation: dotMove 10s linear infinite;
 }
 
@@ -98,7 +102,7 @@ body::after {
 body::before {
     background: linear-gradient(to right, transparent, rgba(69, 162, 158, 0.3) 50%, transparent 100%);
     background-size: 200px 100%;
-    z-index: -3;
+    z-index: -3; /* Keep lines behind dots */
     animation: linesMove 5s linear infinite;
 }
 
@@ -115,7 +119,7 @@ body::before {
 body::before {
     background: linear-gradient(to bottom left, transparent 75%, rgba(69, 162, 158, 0.2) 75%);
     background-size: 100px 100px;
-    z-index: -4;
+    z-index: -4; /* Keep polygons behind everything */
     animation: polygonsMove 7s linear infinite;
 }
 
@@ -190,9 +194,3 @@ button {
 button:hover {
     background-color: #16a085;
 }
-"""
-
-# Create updated CSS file that allows scrolling and includes futuristic animations
-create_file_with_theme_switch(updated_css_content_v9, "/mnt/data/updated_styles_v10.css")
-
-["/mnt/data/updated_styles_v10.css"]
