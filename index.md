@@ -22,7 +22,6 @@ As an enthusiastic Data Scientist, I specialize in image-based analysis, machine
 
 ## Education
 - **Bachelor of Technology in Computer Science and Engineering, Vellore Institute of Technology**  
-  - CGPA: 8.53 / 10  
   - Winner of the Smart India Hackathon 2019
 
 ## Projects
@@ -38,4 +37,4 @@ As an enthusiastic Data Scientist, I specialize in image-based analysis, machine
 - **Tools and Technologies**: Azure Cloud Services, MS Visual Studio Code, Anaconda, Postman, Docker, Kubernetes, PostgreSQL
 
 ## Contact
-Feel free to reach out via [LinkedIn](#) or [Email](mailto:arunbh.y@gmail.com).
+Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/arunbh-yashaswi/) or [Email](mailto:arunbh.y@gmail.com).
