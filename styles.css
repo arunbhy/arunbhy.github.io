@@ -1,0 +1,106 @@
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+    transition: background 0.5s ease;
+    border-bottom: 2px solid;
+}
+
+main {
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+h1, h2 {
+    transition: color 0.5s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background: linear-gradient(45deg, #2c3e50, #34495e, #1abc9c);
+    color: #ecf0f1;
+}
+
+header.dark-theme {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ecf0f1;
+    border-bottom-color: #1abc9c;
+}
+
+main.dark-theme {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a.dark-theme {
+    color: #1abc9c;
+}
+
+/* Light theme styles */
+body.light-theme {
+    background: linear-gradient(45deg, #f3f4f7, #e5e8ec, #ffffff);
+    color: #2c3e50;
+}
+
+header.light-theme {
+    background: #ffffff;
+    color: #2c3e50;
+    border-bottom-color: #3498db;
+}
+
+main.light-theme {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a.light-theme {
+    color: #3498db;
+}
+
+/* Button styling */
+button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+}
