@@ -45,46 +45,46 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Default Dark theme styles with gradient */
+/* Dark theme styles with enhanced contrast */
 body.dark-theme {
-    background: linear-gradient(135deg, #0d0d0d, #2a2a2a, #3d3d3d);
-    color: #e0e0e0; /* Slightly off-white text color */
+    background: linear-gradient(135deg, #0b0c10, #1f2833);
+    color: #c5c6c7; /* Light grey text color for contrast */
 }
 
 header.dark-theme {
-    background: linear-gradient(135deg, #111111, #333333);
-    color: #e0e0e0;
-    border-bottom-color: #444444; /* Darker border color for contrast */
+    background: linear-gradient(135deg, #1f2833, #0b0c10);
+    color: #66fcf1; /* Light blue-green color for contrast */
+    border-bottom-color: #45a29e; /* Medium blue-green color for border */
 }
 
 main.dark-theme {
-    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    background: linear-gradient(135deg, #1f2833, #0b0c10);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 a.dark-theme {
-    color: #1abc9c;
+    color: #66fcf1; /* Light blue-green color for links in dark theme */
 }
 
-/* Light theme styles with gradient */
+/* Light theme styles with enhanced contrast */
 body.light-theme {
-    background: linear-gradient(135deg, #f0f0f5, #e0e0e5, #d0d0d5); /* Soft gradient for light theme */
-    color: #333333; /* Darker text for contrast */
+    background: linear-gradient(135deg, #ffffff, #e6e6e6);
+    color: #333333; /* Dark grey text color for contrast */
 }
 
 header.light-theme {
-    background: linear-gradient(135deg, #ffffff, #eaeaea);
-    color: #333333;
-    border-bottom-color: #cccccc;
+    background: linear-gradient(135deg, #f0f0f0, #e6e6e6);
+    color: #1f2833; /* Dark color for contrast in light theme */
+    border-bottom-color: #45a29e;
 }
 
 main.light-theme {
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 a.light-theme {
-    color: #3498db; /* Blue color for links in light theme */
+    color: #1f2833; /* Dark color for links in light theme */
 }
 
 /* Button styling */
