@@ -1,17 +1,181 @@
-title: "Arunbh Yashaswi's GitHub Page"
-description: "Showcasing my work in Data Science and AI."
-theme: jekyll-theme-cayman
-url: "https://arunbhyashaswi.github.io"
-baseurl: "/"
+# Site settings
+title: Arunbh Yashaswi
+email: arunbh.y@gmail.com
+description: >-
+  Portfolio and online resume for Arunbh Yashaswi
 
-header_pages:
-  - index.md
-  - about.md
-  - projects.md
-  - research.md
+# Base URL and domain settings
+baseurl: "" # Repository name as subpath (e.g., https://kautilyaa.github.io/kautilyaa)
+url: "https://kautilyaa.github.io" # GitHub Pages domain
 
-social_links:
-  - name: GitHub
-    url: https://github.com/arunbhyashaswi
-  - name: LinkedIn
-    url: https://linkedin.com/in/arunbhyashaswi
+# Build settings
+# theme: minima # GitHub Pages-supported theme
+# theme: jekyll-theme-minimal
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude these files/folders from the build
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - run-dev.sh
+
+# Sass and Tailwind CSS settings (optional)
+sass:
+  load_paths:
+    - _sass
+    - node_modules
+
+include:
+  - node_modules/tailwindcss
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM # Use GitHub Flavored Markdown
+
+# Defaults for posts/pages
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Sitemap settings
+sitemap:
+  exclude:
+    - "/404.html"
+  filename: "sitemap.xml"
+  changefreq: "weekly"
+
+# Deployment settings for GitHub Pages
+github:
+  metadata: true
+
+# Jekyll Feed configuration
+feed:
+  path: feed.xml
+
+
+# # Welcome to Jekyll!
+
+# # Site settings
+# title: Arunbh Yashaswi
+# email: arunbh.y@gmail.com
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Portfolio and online resume for Arunbh Yashaswi
+
+# # Base URL and domain settings
+# baseurl: "" # "/kautilyaa" # the subpath of your site, e.g. /kautilyaa
+# domain: kautilyaa.github.io       # GitHub Pages domain, without http
+# url: https://kautilyaa.github.io  # the base hostname and protocol for your site
+
+# # Build settings
+# theme: minima # specify a theme supported by GitHub Pages
+# plugins: # GitHub Pages-approved plugins
+#   - jekyll-feed
+#   - jekyll-seo-tag
+
+# # Excluded files and folders
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+#   - run-dev.sh
+
+# # Sass and Tailwind CSS settings
+# sass:
+#   load_paths:
+#     - _sass
+#     - node_modules
+
+# include:
+#   - node_modules/tailwindcss
+
+
+
+
+
+# # Welcome to Jekyll!
+# #
+# # This config file is meant for settings that affect your whole blog, values
+# # which you are expected to set up once and rarely edit after that. If you find
+# # yourself editing this file very often, consider using Jekyll's data files
+# # feature for the data you need to update frequently.
+# #
+# # For technical reasons, this file is *NOT* reloaded automatically when you use
+# # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# #
+# # If you need help with YAML syntax, here are some quick references for you:
+# # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# # https://learnxinyminutes.com/docs/yaml/
+# #
+# # Site settings
+# # These are used to personalize your new site. If you look in the HTML files,
+# # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# # You can create any custom variable you would like, and they will be accessible
+# # in the templates via {{ site.myvariable }}.
+# title: Arunbh Yashaswi
+# email: arunbh.y@gmail.com
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Portfolio and online resume for Arunbh Yashaswi
+
+# baseurl: "" #"/kautilyaa/" # the subpath of your site, e.g. /blog
+# domain: kautilyaa.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+# url: https://kautilyaa.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+
+# # domain: #jonnycarroll.dev
+# # url: "https://jonnycarroll.dev" # the base hostname & protocol for your site, e.g. http://example.com
+
+# # Build settings
+# #theme: minima # for themes supported by github pages
+# #remote_theme: XXX # for themes that are hosted in github
+# #plugins:
+# # Exclude from processing.
+# # The following items will not be processed, by default.
+# # Any item listed under the `exclude:` key here will be automatically added to
+# # the internal "default list".
+# #
+# # Excluded items can be processed by explicitly listing the directories or
+# # their entries' file path in the `include:` list.
+# #
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+#   - run-dev.sh
+
+# sass:
+#   load_paths:
+#     - _sass
+#     - node_modules
+
+# include:
+#   - node_modules/tailwindcss

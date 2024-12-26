@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth" x-data="{
+darkMode: localStorage.theme === 'dark' || ( !('theme' in localStorage) &&
+window.matchMedia('(prefers-color-scheme: dark)').matches) }"
+x-bind:class="darkMode ? 'dark' : '' ">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Arunbh Yashaswi - Arunbh Yashaswi</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/favicon.svg">
+  <script
+    src="https://kit.fontawesome.com/9d2e3172d6.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  ></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body
+  class="relative bg-slate-300 dark:bg-slate-900 text-lg text-slate-800 dark:text-slate-300 antialiased font-display"
+>
+  <div
+    class="fixed z-10 top-2 right-2 p-1 inline-block gap-1 shadow-md rounded-md backdrop-blur-sm bg-white/30 dark:bg-black/30 text-sm"
+  >
+    <button
+      type="button"
+      title="Toggle light mode"
+      class="px-2 py-1 rounded-md hover:bg-slate-300 dark:hover:bg-slate-800"
+      @click="() => {
+        localStorage.theme = 'light';
+        darkMode = false;
+      }"
+    >
+      <i class="fa-solid fa-cloud-sun"></i></button
+    ><button
+      type="button"
+      title="Toggle dark mode"
+      class="px-2 py-1 rounded-md hover:bg-slate-300 dark:hover:bg-slate-800"
+      @click="() => {
+        localStorage.theme = 'dark';
+        darkMode = true;
+      }"
+    >
+      <i class="fa-solid fa-moon"></i></button
+    ><button
+      type="button"
+      title="Toggle dark mode system preference"
+      class="px-2 py-1 rounded-md hover:bg-slate-300 dark:hover:bg-slate-800"
+      @click="() => {
+        localStorage.removeItem('theme');
+        darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }"
+    >
+      <i class="fa-solid fa-gear"></i>
+    </button>
+  </div>
+  <div class="lg:max-w-screen-lg lg:mx-auto">
+    <div class="px-6 lg:px-0 lg:flex">
+      <header class="pt-12 lg:sticky lg:top-0 lg:h-dvh lg:w-1/2 lg:pt-16">
+        <h1 class="text-6xl mb-4">
+          Hi, I'm
+          <mark
+            class="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-purple-500"
+            >Arunbh</mark
+          >.
+        </h1>
+        <h2 class="text-3xl mb-4">Student at UMD</h2>
+        <!-- Social Links Section -->
+
+        <nav aria-label="Social media links" class="mb-4">
+          <ul class="flex gap-2">
+            <li>
+              <a
+                href="https://kautilyaa.github.io/"
+                target="_blank"
+                title="Personal GitHub Profile"
+                class="flex items-center justify-center w-12 h-12 rounded-md border-2 border-slate-300 hover:border-blue-800 dark:border-slate-700 dark:hover:border-blue-400 transition-all bg-[#f8f8f8]/60"
+              >
+                <img
+                  src="/assets/icons/github-icon.png"
+                  alt="GitHub"
+                  class="w-8 h-8"
+                  style="width: 32px; height: 32px;"
+                />
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/arunbh-yashaswi/"
+                target="_blank"
+                title="LinkedIn Profile"
+                class="flex items-center justify-center w-12 h-12 rounded-md border-2 border-slate-300 hover:border-blue-800 dark:border-slate-700 dark:hover:border-blue-400 transition-all bg-[#f8f8f8]/60"
+              >
+                <img
+                  src="/assets/icons/linkedin-icon.svg"
+                  alt="LinkedIn"
+                  class="w-8 h-8"
+                  style="width: 32px; height: 32px;"
+                />
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://stackoverflow.com/users/13945615/arunbh-yashaswi"
+                target="_blank"
+                title="Stack Overflow Profile"
+                class="flex items-center justify-center w-12 h-12 rounded-md border-2 border-slate-300 hover:border-blue-800 dark:border-slate-700 dark:hover:border-blue-400 transition-all bg-[#f8f8f8]/60"
+              >
+                <img
+                  src="/assets/icons/stackoverflow-icon.svg"
+                  alt="Stack Overflow"
+                  class="w-8 h-8"
+                  style="width: 32px; height: 32px;"
+                />
+                <span class="sr-only">Stack Overflow</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="w-full lg:w-2/3 mb-8">
+          I
+          <strong class="font-semibold text-slate-950 dark:text-slate-50">analyze</strong>
+          complex data;
+          <strong class="font-semibold text-slate-950 dark:text-slate-50">develop</strong>
+          machine learning models;
+          <strong class="font-semibold text-slate-950 dark:text-slate-50">optimize</strong>
+          workflows; and help organizations
+          <strong class="font-semibold text-slate-950 dark:text-slate-50">drive</strong>
+          impactful decisions through data.
+        </div>
+        <ul class="hidden lg:block">
+          <li>
+            <a
+              href="#about-me"
+              class="group dark:hover:text-slate-50 transition-all"
+              >About me
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#learning-focus"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Skills
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#professional-experience"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Professional experience
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <!-- <li>
+            <a
+              href="#testimonials"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Testimonials
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li> -->
+          <li>
+            <a
+              href="#projects"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Projects
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#publications"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Publications & Patents
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#achievements"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Achievements
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#qualifications"
+              class="group dark:hover:text-slate-50 transition-all"
+              >Qualifications
+              <span
+                class="inline-block ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <i class="fa-solid fa-arrow-right fa-xs"></i
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </header>
+      <main class="py-16 lg:w-1/2">
+        <section id="about-me" class="mb-24">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    About Me
+  </h2>
+  <p class="mb-3">
+    I am an aspiring Data Scientist pursuing a Master’s in Data Science at the University of Maryland. With expertise in machine learning, statistical modeling, and big data systems, I am passionate about solving complex problems and driving impactful decisions through data, with a specific interest in computer vision applications.
+  </p>
+  <p class="mb-3">
+    At 
+    <a
+      href="https://www.optum.com"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+    >
+      Optum Global Solutions
+    </a>, 
+    I implemented machine learning models and automated workflows, reducing processing time by 40% and increasing throughput by 32%. My work included PaaS modules, NLP-based automation, and a patented image similarity model for form processing.
+  </p>
+  <p class="mb-3">
+    My technical toolkit includes Python, SQL, Scikit-Learn, TensorFlow, and cloud platforms like AWS and Azure. I have experience deploying scalable solutions and deriving actionable insights, particularly in computer vision tasks such as OCR-based text extraction and image analysis.
+  </p>
+  <p class="mb-3 font-semibold text-slate-900 dark:text-slate-100">
+    I aim to leverage my skills and passion for computer vision to deliver impactful solutions that optimize processes, enhance user experiences, and drive innovation.
+  </p>
+</section>
+
+        <section id="learning-focus" class="mb-24" x-data="{ activeTag: 'all' }">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    Learning focus
+  </h2>
+  <p class="mb-2 font-bold">
+    Skills:
+  </p>
+  <ul class="flex gap-1 flex-wrap mb-4">
+    <template
+      x-for="filter in ['all', 'data', 'machine-learning', 'backend', 'frameworks', 'languages']"
+    >
+      <li>
+        <button
+          x-bind:class="activeTag === filter ? 'bg-slate-200 dark:bg-slate-800 text-black dark:text-white' : 'bg-slate-300 dark:bg-slate-900'"
+          x-text="filter"
+          @click="activeTag = filter"
+          class="py-1 px-2 rounded-md hover:bg-slate-400 dark:hover:bg-slate-700 text-sm transition-all"
+        ></button>
+      </li>
+    </template>
+  </ul>
+  <ul class="flex gap-2 flex-wrap">
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'languages') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://www.python.org/"
+        target="_blank"
+        title="I am using Python The base of everything begins from here."
+        style="background-image: url('/assets/tech-logos/python-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'frameworks') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://github.com/"
+        target="_blank"
+        title="I am using GitHub To manage version control and collaborate effectively on projects."
+        style="background-image: url('/assets/tech-logos/github-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'backend') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://www.docker.com/"
+        target="_blank"
+        title="I am using Docker Essential for containerization and deployment in my projects."
+        style="background-image: url('/assets/tech-logos/docker-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://huggingface.co/"
+        target="_blank"
+        title="I am using Hugging Face Integral for NLP model training and fine-tuning."
+        style="background-image: url('/assets/tech-logos/hugging-face-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://www.tensorflow.org/"
+        target="_blank"
+        title="I am using TensorFlow Provides robust tools for building and deploying ML models."
+        style="background-image: url('/assets/tech-logos/tensorflow-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'data') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://www.microsoft.com/sql-server"
+        target="_blank"
+        title="I am using SQL For structured data queries and management."
+        style="background-image: url('/assets/tech-logos/sql-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'frameworks') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://www.djangoproject.com/"
+        target="_blank"
+        title="I am using Django Excellent for developing scalable and robust backend services."
+        style="background-image: url('/assets/tech-logos/django-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'backend') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://azure.microsoft.com/"
+        target="_blank"
+        title="I am using Azure Leveraged for cloud solutions and infrastructure management."
+        style="background-image: url('/assets/tech-logos/azure-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'frameworks') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://code.visualstudio.com/"
+        target="_blank"
+        title="I am using Visual Studio Code The go-to editor for developing and debugging code effectively."
+        style="background-image: url('/assets/tech-logos/vs-code-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://pandas.pydata.org/docs/"
+        target="_blank"
+        title="I am using Pandas The go-to editor for developing and debugging code effectively."
+        style="background-image: url('/assets/tech-logos/pandas-logo.svg')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://numpy.org/"
+        target="_blank"
+        title="I am using Numpy The go-to editor for developing and debugging code effectively."
+        style="background-image: url('/assets/tech-logos/numpy-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href="https://opencv.org/"
+        target="_blank"
+        title="I am using Computer Vison Liking to work with images."
+        style="background-image: url('/assets/tech-logos/OpenCV-logo.png')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+    <li
+      style="transition-behavior: allow-discrete"
+      class="transition-all"
+      x-bind:class="(activeTag === 'all' || activeTag === 'machine-learning') ? 'opacity-100 block' : 'opacity-0 hidden'"
+    >
+      <a
+        href=""
+        target="_blank"
+        title="I am using Natural Language Processing Liking to work with images."
+        style="background-image: url('/assets/tech-logos/nlp-logo.jpg')"
+        class="block rounded-md border-white dark:border-black hover:border-blue-800 dark:hover:border-blue-400 bg-origin-padding bg-no-repeat border-2 size-16 bg-center bg-cover bg-white transition-all"
+      ></a>
+    </li>
+    
+  </ul>
+</section>
+
+        <section id="professional-experience" class="mb-24">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    Professional experience
+  </h2>
+  
+  <div
+    class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+      March 2023 - June 2024
+      <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+        1 year 4 months
+      </div>
+    </div>
+    <a
+      href="https://www.optum.com"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute -top-6 sm:top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3
+        class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        Data Scientist, Optum Global Solutions
+      </h3>
+      
+      <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+        <p>Developed and deployed machine learning models for automated data extraction  and templated form processing, achieving a 40% reduction in processing time and a 32% increase in throughput.  Patented an image similarity model for enhanced form processing accuracy.  Leveraged NLP techniques such as semantic analysis, table extraction, and edge detection to deliver modular services.  Achieved a 96% accuracy rate and 42% faster processing for non-templated document matching using MPNet transformers.</p>
+
+      </div>
+      <ul class="flex gap-1 flex-wrap">
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Python
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Azure
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          NLP
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          MPNet
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Transformers
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          PaaS
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Semantic Analysis
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Table Extraction
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Pandas
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Numpy
+        </li>
+        
+      </ul>
+    </a>
+  </div>
+  
+  <div
+    class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+      July 2021 - March 2023
+      <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+        1 year 9 months
+      </div>
+    </div>
+    <a
+      href="https://www.optum.com"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute -top-6 sm:top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3
+        class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        Associate Software Engineer II, Optum Global Solutions
+      </h3>
+      
+      <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+        <p>Designed and implemented OCR-based text matching and edge data extraction  modules with validation and auto-correction. Optimized code efficiency,  reducing processing time from 1 minute to 30 seconds and increasing system  capacity from 5 to 24 files per minute through concurrency and load balancing.  Integrated a Layout Parser, achieving 87% accuracy on Doclaynet for document  structure analysis.</p>
+
+      </div>
+      <ul class="flex gap-1 flex-wrap">
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Python
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          OCR
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Layout Parser
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Doclaynet
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Concurrency
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Edge Detection
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Pandas
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Numpy
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Machine Learning
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Scikit - Learn
+        </li>
+        
+      </ul>
+    </a>
+  </div>
+  
+</section>
+
+        <!-- <secton
+  id="testimonials"
+  class="flex flex-col w-full mb-24"
+  x-data="{
+      skip: 1,
+      atBeginning: false,
+      atEnd: false,
+      next() {
+        this.to((current, offset) => current + (offset * this.skip))
+      },
+      prev() {
+        this.to((current, offset) => current - (offset * this.skip))
+      },
+      to(strategy) {
+        let slider = this.$refs.slider
+        let current = slider.scrollLeft
+        let offset = slider.firstElementChild.getBoundingClientRect().width
+        slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+      },
+      focusableWhenVisible: {
+        'x-intersect:enter'() {
+          this.$el.removeAttribute('tabindex')
+        },
+        'x-intersect:leave'() {
+          this.$el.setAttribute('tabindex', '-1')
+        },
+      },
+      disableNextAndPreviousButtons: {
+        'x-intersect:enter.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          // If this is the first slide.
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = true
+          // If this is the last slide.
+          } else if (slideEls[slideEls.length-1] === this.$el) {
+            this.atEnd = true
+          }
+        },
+        'x-intersect:leave.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          // If this is the first slide.
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = false
+          // If this is the last slide.
+          } else if (slideEls[slideEls.length-1] === this.$el) {
+            this.atEnd = false
+          }
+        },
+      },
+    }"
+>
+  <div
+    class="flex flex-col w-full"
+    aria-labelledby="carousel-label"
+    role="region"
+    tabindex="0"
+    x-on:keydown.left="prev"
+    x-on:keydown.right="next"
+  >
+    <span class="sr-only" hidden="" id="carousel-content-label"
+      >Testimonials slide show</span
+    >
+    <div class="flex items-center justify-end lg:px-2 space-x-2 mb-2">
+      <h2
+        class="grow uppercase font-bold text-black dark:text-white lg:hidden"
+        id="carousel-label"
+      >
+        Testimonials
+      </h2>
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50 ': atBeginning }"
+        :aria-disabled="atBeginning"
+        :tabindex="atEnd ? -1 : 0"
+        x-on:click="prev"
+        tabindex="0"
+        aria-disabled="true"
+      >
+        <span aria-hidden="true" class="mx-auto"
+          ><i class="fa-solid fa-circle-left"></i></span
+        ><span class="sr-only">Skip to previous slide page</span>
+      </button>
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50 ': atEnd }"
+        :aria-disabled="atEnd"
+        :tabindex="atEnd ? -1 : 0"
+        x-on:click="next"
+        tabindex="0"
+      >
+        <span aria-hidden="true" class="mx-auto"
+          ><i class="fa-solid fa-circle-right"></i></span
+        ><span class="sr-only">Skip to next slide page</span>
+      </button>
+    </div>
+    <ul
+      class="flex gap-3 overflow-x-scroll no-scrollbar snap-mandatory snap-x w-full rounded-2xl"
+      role="listbox"
+      aria-labelledby="carousel-content-label"
+      tabindex="0"
+      x-ref="slider"
+    >
+      
+    </ul>
+  </div>
+</secton>
+ -->
+        <!-- <section
+  id="projects"
+  class="flex flex-col w-full mb-24"
+  x-data="{
+      skip: 1,
+      atBeginning: false,
+      atEnd: false,
+      next() {
+        this.to((current, offset) => current + (offset * this.skip))
+      },
+      prev() {
+        this.to((current, offset) => current - (offset * this.skip))
+      },
+      to(strategy) {
+        let slider = this.$refs.slider
+        let current = slider.scrollTop
+        let offset = slider.firstElementChild.getBoundingClientRect().height
+        slider.scrollTo({ top: strategy(current, offset), behavior: 'smooth' })
+      },
+      disableNextAndPreviousButtons: {
+        'x-intersect:enter.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = true
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = true
+          }
+        },
+        'x-intersect:leave.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = false
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = false
+          }
+        },
+      },
+    }"
+>
+  <div
+    class="flex flex-col w-full"
+    aria-labelledby="projects-label"
+    role="region"
+    tabindex="0"
+    x-on:keydown.up="prev"
+    x-on:keydown.down="next"
+  >
+    <h2
+      class="uppercase font-bold text-black dark:text-white lg:hidden mb-4"
+      id="projects-label"
+    >
+      Projects
+    </h2>
+    <div class="flex items-center justify-end lg:px-2 space-x-2 mb-2">
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atBeginning }"
+        :aria-disabled="atBeginning"
+        x-on:click="prev"
+      >
+        <i class="fa-solid fa-circle-up"></i>
+      </button>
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atEnd }"
+        :aria-disabled="atEnd"
+        x-on:click="next"
+      >
+        <i class="fa-solid fa-circle-down"></i>
+      </button>
+    </div>
+    <ul
+      class="flex flex-col gap-6 overflow-y-scroll no-scrollbar snap-mandatory snap-y w-full max-h-[500px] rounded-2xl"
+      x-ref="slider"
+    >
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          T.R.U.S.T (Targeted Risk Understanding & Scoring Technology)
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A data science-driven framework predicting loan defaults using the Home Credit Default Risk dataset. Identifies risk factors, develops machine learning models, and assists lenders in minimizing financial losses.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/TRUST"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          Ticket Creation Customer Support
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A Smart India Hackathon 2019 winning solution automating ticket creation for customer support via email. Ensures data correctness and completeness, applies machine learning to handle errors, and generates formatted tickets sent to the user's email.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/ticket-creation-customer-support"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          LiveTranslatorScreen
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A comic translation tool using YOLO and transformer models to detect, extract, and translate text from images. Simplifies the translation process with advanced computer vision and NLP techniques.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/LiveTranslatorScreen"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          AMSP (Antimicrobial Stewardship Platform)
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A cloud-hosted system addressing antimicrobial resistance by optimizing antibiotic usage. Provides tools for reducing misuse, preventing resource wastage, and promoting global healthcare initiatives.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/AMSP"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          bug-free-lamp
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A validation tool verifying field values against their corresponding field names, ensuring accurate data handling and validation processes in applications.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/bug-free-lamp"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          WifiProbe
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A WiFi intrusion detection system that identifies authorized and unauthorized devices by capturing WiFi probe requests. Tracks MAC addresses for enhanced safety, with extensibility for additional features like cameras and motion sensors.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/WifiProbe"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</section> -->
+<section
+  id="projects"
+  class="flex flex-col w-full mb-24"
+  x-data="{
+      skip: 1,
+      atBeginning: false,
+      atEnd: false,
+      next() {
+        this.to((current, offset) => current + (offset * this.skip))
+      },
+      prev() {
+        this.to((current, offset) => current - (offset * this.skip))
+      },
+      to(strategy) {
+        let slider = this.$refs.slider
+        let current = slider.scrollTop
+        let offset = slider.firstElementChild.getBoundingClientRect().height
+        slider.scrollTo({ top: strategy(current, offset), behavior: 'smooth' })
+      },
+      disableNextAndPreviousButtons: {
+        'x-intersect:enter.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = true
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = true
+          }
+        },
+        'x-intersect:leave.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = false
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = false
+          }
+        },
+      },
+    }"
+>
+  <div
+    class="flex flex-col w-full"
+    aria-labelledby="projects-label"
+    role="region"
+    tabindex="0"
+    x-on:keydown.up="prev"
+    x-on:keydown.down="next"
+  >
+    <h2
+      class="uppercase font-bold text-black dark:text-white lg:hidden mb-4"
+      id="projects-label"
+    >
+      Projects
+    </h2>
+    <div class="flex items-center justify-end lg:px-2 space-x-2 mb-2">
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atBeginning }"
+        :aria-disabled="atBeginning"
+        x-on:click="prev"
+      >
+        <i class="fa-solid fa-circle-up"></i>
+      </button>
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atEnd }"
+        :aria-disabled="atEnd"
+        x-on:click="next"
+      >
+        <i class="fa-solid fa-circle-down"></i>
+      </button>
+    </div>
+    <ul
+      class="flex flex-col gap-6 overflow-y-scroll no-scrollbar snap-mandatory snap-y w-full max-h-[500px] rounded-2xl"
+      x-ref="slider"
+    >
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          T.R.U.S.T (Targeted Risk Understanding & Scoring Technology)
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A data science-driven framework predicting loan defaults using the Home Credit Default Risk dataset. Identifies risk factors, develops machine learning models, and assists lenders in minimizing financial losses.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/TRUST"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          Ticket Creation Customer Support
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A Smart India Hackathon 2019 winning solution automating ticket creation for customer support via email. Ensures data correctness and completeness, applies machine learning to handle errors, and generates formatted tickets sent to the user's email.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/ticket-creation-customer-support"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          LiveTranslatorScreen
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A comic translation tool using YOLO and transformer models to detect, extract, and translate text from images. Simplifies the translation process with advanced computer vision and NLP techniques.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/LiveTranslatorScreen"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          AMSP (Antimicrobial Stewardship Platform)
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A cloud-hosted system addressing antimicrobial resistance by optimizing antibiotic usage. Provides tools for reducing misuse, preventing resource wastage, and promoting global healthcare initiatives.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/AMSP"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          bug-free-lamp
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A validation tool verifying field values against their corresponding field names, ensuring accurate data handling and validation processes in applications.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/bug-free-lamp"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+        :style="{
+          backgroundImage: project.image ? `url(${project.image})` : '',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+        }"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          WifiProbe
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A WiFi intrusion detection system that identifies authorized and unauthorized devices by capturing WiFi probe requests. Tracks MAC addresses for enhanced safety, with extensibility for additional features like cameras and motion sensors.
+        </p>
+        <a
+          href="https://github.com/kautilyaa/WifiProbe"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View Project
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+        <section
+  id="publications"
+  class="flex flex-col w-full mb-24"
+  x-data="{
+      skip: 1,
+      atBeginning: false,
+      atEnd: false,
+      next() {
+        this.to((current, offset) => current + (offset * this.skip))
+      },
+      prev() {
+        this.to((current, offset) => current - (offset * this.skip))
+      },
+      to(strategy) {
+        let slider = this.$refs.slider
+        let current = slider.scrollTop
+        let offset = slider.firstElementChild.getBoundingClientRect().height
+        slider.scrollTo({ top: strategy(current, offset), behavior: 'smooth' })
+      },
+      disableNextAndPreviousButtons: {
+        'x-intersect:enter.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = true
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = true
+          }
+        },
+        'x-intersect:leave.threshold.05'() {
+          let slideEls = this.$el.parentElement.children
+          if (slideEls[0] === this.$el) {
+            this.atBeginning = false
+          } else if (slideEls[slideEls.length - 1] === this.$el) {
+            this.atEnd = false
+          }
+        },
+      },
+    }"
+>
+  <div
+    class="flex flex-col w-full"
+    aria-labelledby="publications-label"
+    role="region"
+    tabindex="0"
+    x-on:keydown.up="prev"
+    x-on:keydown.down="next"
+  >
+    <h2
+      class="uppercase font-bold text-black dark:text-white lg:hidden mb-4"
+      id="publications-label"
+    >
+      Publications & Patents
+    </h2>
+    <div class="flex items-center justify-end lg:px-2 space-x-2 mb-2">
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atBeginning }"
+        :aria-disabled="atBeginning"
+        x-on:click="prev"
+      >
+        <i class="fa-solid fa-circle-up"></i>
+      </button>
+      <button
+        class="flex items-center text-white/60 hover:text-white/90 transition-colors"
+        :class="{ 'opacity-50': atEnd }"
+        :aria-disabled="atEnd"
+        x-on:click="next"
+      >
+        <i class="fa-solid fa-circle-down"></i>
+      </button>
+    </div>
+    <ul
+      class="flex flex-col gap-6 overflow-y-scroll no-scrollbar snap-mandatory snap-y w-full max-h-[500px] rounded-2xl"
+      x-ref="slider"
+    >
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          Patent: Image Similarity Model for Templated Form Processing
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          Year: 2023
+        </p>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A patented model that optimizes image matching for automated document workflows.
+        </p>
+        
+        <a
+          href=""
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View More
+        </a>
+        
+      </li>
+      
+      <li
+        class="flex flex-col items-center justify-center w-full snap-start h-full p-4 rounded-2xl bg-white/30 hover:bg-white/40 dark:bg-black/30 dark:hover:bg-black/40 shadow-md transition-colors"
+      >
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          Publication: Low Cost Recommendation System for Online Users based on Intelligent Social Networking Clusters
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          Year: 2021
+        </p>
+        <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+          A low cost hybrid recommendation methodology to showcase posts that are related to a person's past history which are related to the person. The experimentation and results involves the clustering of different topics based on collaborative filtering and content-based filtering, making a hybrid of these filtering methods for making a recommendation system. The research focuses on getting data posted currently by different kinds of people and based on the content in segregate different kinds of people or the topics.
+        </p>
+        
+        <a
+          href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3884048"
+          class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+          target="_blank"
+        >
+          View More
+        </a>
+        
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+        <section id="achievements" class="mb-24">
+    <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+      Achievements
+    </h2>
+    
+    <div
+      class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+    >
+      <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+        2019
+        <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+          Competition
+        </div>
+      </div>
+      <div class="sm:col-span-3">
+        <h3
+          class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+        >
+          Winner, Smart India Hackathon
+        </h3>
+        <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+          <p>Developed a customer support automation solution, winning the national hackathon.</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+    >
+      <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+        2022
+        <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+          Recognition
+        </div>
+      </div>
+      <div class="sm:col-span-3">
+        <h3
+          class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+        >
+          Top Performer at Optum Global Solutions
+        </h3>
+        <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+          <p>Awarded for deploying ML models that reduced processing time by 40%.</p>
+
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+        <section id="qualifications" class="mb-24">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    Qualifications
+  </h2>
+  
+  <div
+    class="grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">Aug 2023 - May 2026 (Expected)</div>
+    <a
+      href="https://www.umd.edu/"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3>Master of Science in Data Science</h3>
+      <h3
+        class="mb-4 transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        University of Maryland
+      </h3>
+      <ul class="flex gap-1 flex-wrap" title="Modules completed">
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Machine Learning
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Natural Language Processing
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Big Data Analytics
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Statistical Modeling
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Data Visualization
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Data Engineering
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Probablity and Statistics
+        </li>
+        
+      </ul>
+    </a>
+  </div>
+  
+  <div
+    class="grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">July 2017 - June 2021</div>
+    <a
+      href="https://vit.ac.in/"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+      <h3
+        class="mb-4 transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        Vellore Institute of Technology
+      </h3>
+      <ul class="flex gap-1 flex-wrap" title="Modules completed">
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Machine Learning
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Image Processing
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Algorithms & Data Structures
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Operating Systems
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Database Management Systems
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Computer Networks
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Artificial Intelligence
+        </li>
+        
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          Software Engineering
+        </li>
+        
+      </ul>
+    </a>
+  </div>
+  
+</section>
+
+        <!-- <section id="made-with-care" class="text-sm">
+  <p class="mb-4">
+    Made with care with
+    <a
+      href="https://code.visualstudio.com/"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      >Visual Studio Code</a
+    >. Built on
+    <a
+      href="https://jekyllrb.com/"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      >Jekyll</a
+    >,
+    <a
+      href="https://tailwindcss.com/"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      >Tailwind CSS</a
+    >
+    and
+    <a
+      href="https://alpinejs.dev/"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      target="_blank"
+      >Alpine.js</a
+    >. Deployed to
+    <a
+      href="https://pages.github.com/"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      >GitHub Pages</a
+    >
+    via
+    <a
+      href="https://github.com/features/actions"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400"
+      >GitHub Actions</a
+    >.
+  </p>
+  <a
+    title="The best artists steal... with an attribution ;-)"
+    href="https://github.com/jonnycarroll/jonnycarroll.github.io"
+    target="_blank"
+    class="hover:text-yellow-600 dark:hover:text-yellow-300"
+    ><i class="fa-solid fa-wand-magic-sparkles"></i> Build your own online
+    resume.</a
+  >
+</section> -->
+
+      </main>
+    </div>
+  </div>
+  <div class="stars">
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+  <div class="star"></div>
+  
+</div>
+
+</body>
+</html>

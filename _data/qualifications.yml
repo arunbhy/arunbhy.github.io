@@ -1,0 +1,28 @@
+- name: Master of Science in Data Science
+  provider:
+    name: University of Maryland
+    url: https://www.umd.edu/
+  period: Aug 2023 - May 2026 (Expected)
+  modules:
+    - Machine Learning
+    - Natural Language Processing
+    - Big Data Analytics
+    - Statistical Modeling
+    - Data Visualization
+    - Data Engineering
+    - Probablity and Statistics
+
+- name: Bachelor of Technology in Computer Science and Engineering
+  provider:
+    name: Vellore Institute of Technology
+    url: https://vit.ac.in/
+  period: July 2017 - June 2021
+  modules:
+    - Machine Learning
+    - Image Processing
+    - Algorithms & Data Structures
+    - Operating Systems
+    - Database Management Systems
+    - Computer Networks
+    - Artificial Intelligence
+    - Software Engineering

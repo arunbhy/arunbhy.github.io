@@ -1,0 +1,37 @@
+<section id="qualifications" class="mb-24">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    Qualifications
+  </h2>
+  {% for q in site.data.qualifications %}
+  <div
+    class="grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">{{ q.period }}</div>
+    <a
+      href="{{ q.provider.url }}"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3>{{ q.name }}</h3>
+      <h3
+        class="mb-4 transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        {{ q.provider.name }}
+      </h3>
+      <ul class="flex gap-1 flex-wrap" title="Modules completed">
+        {% for module in q.modules %}
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          {{ module }}
+        </li>
+        {% endfor %}
+      </ul>
+    </a>
+  </div>
+  {% endfor %}
+</section>
