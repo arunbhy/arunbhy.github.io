@@ -1,0 +1,22 @@
+{
+  "name": "jonnycarroll.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Portfolio and online resume for Jonny Carroll, staff software engineer",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.9"
+  }
+}

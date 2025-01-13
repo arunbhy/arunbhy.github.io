@@ -1,0 +1,48 @@
+- role: Data Scientist
+  company:
+    name: Optum Global Solutions
+    url: https://www.optum.com
+  period: March 2023 - June 2024
+  period-label: 1 year 4 months
+  description: >
+    Developed and deployed machine learning models for automated data extraction 
+    and templated form processing, achieving a 40% reduction in processing time and a 32% increase in throughput. 
+    Patented an image similarity model for enhanced form processing accuracy. 
+    Leveraged NLP techniques such as semantic analysis, table extraction, and edge detection to deliver modular services. 
+    Achieved a 96% accuracy rate and 42% faster processing for non-templated document matching using MPNet transformers.
+  technologies:
+    - Python
+    - Azure
+    - NLP
+    - MPNet
+    - Transformers
+    - PaaS
+    - Semantic Analysis
+    - Table Extraction
+    - Pandas
+    - Numpy
+
+- role: Associate Software Engineer II
+  company:
+    name: Optum Global Solutions
+    url: https://www.optum.com
+  period: July 2021 - March 2023
+  period-label: 1 year 9 months
+  description: >
+    Designed and implemented OCR-based text matching and edge data extraction 
+    modules with validation and auto-correction. Optimized code efficiency, 
+    reducing processing time from 1 minute to 30 seconds and increasing system 
+    capacity from 5 to 24 files per minute through concurrency and load balancing. 
+    Integrated a Layout Parser, achieving 87% accuracy on Doclaynet for document 
+    structure analysis.
+  technologies:
+    - Python
+    - OCR
+    - Layout Parser
+    - Doclaynet
+    - Concurrency
+    - Edge Detection
+    - Pandas
+    - Numpy
+    - Machine Learning
+    - Scikit - Learn

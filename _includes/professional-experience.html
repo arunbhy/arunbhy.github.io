@@ -1,0 +1,47 @@
+<section id="professional-experience" class="mb-24">
+  <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+    Professional experience
+  </h2>
+  {% for job in site.data.professional-experience %}
+  <div
+    class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+  >
+    <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+      {{ job.period }}
+      <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+        {{ job.period-label }}
+      </div>
+    </div>
+    <a
+      href="{{ job.company.url }}"
+      target="_blank"
+      class="group relative sm:col-span-3 block"
+    >
+      <span
+        class="absolute -top-6 sm:top-0 right-1 transition-all group-hover:text-slate-950 dark:group-hover:text-slate-50 group-hover:-translate-y-1 group-hover:translate-x-1"
+        ><i class="fa-solid fa-square-arrow-up-right"></i
+      ></span>
+      <h3
+        class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+      >
+        {{ job.role }}, {{ job.company.name }}
+      </h3>
+      {% for past-role in job.past-roles %}
+      <h3 class="text-slate-500">{{ past-role }}</h3>
+      {% endfor %}
+      <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+        {{ job.description | markdownify }}
+      </div>
+      <ul class="flex gap-1 flex-wrap">
+        {% for tech in job.technologies %}
+        <li
+          class="p-2 rounded-full text-xs bg-black/10 text-slate-900 dark:bg-white/10 dark:text-slate-100"
+        >
+          {{ tech }}
+        </li>
+        {% endfor %}
+      </ul>
+    </a>
+  </div>
+  {% endfor %}
+</section>

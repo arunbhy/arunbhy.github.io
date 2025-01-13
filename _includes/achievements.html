@@ -1,0 +1,28 @@
+<section id="achievements" class="mb-24">
+    <h2 class="uppercase font-bold text-black dark:text-white mb-4 lg:hidden">
+      Achievements
+    </h2>
+    {% for achievement in site.data.achievements %}
+    <div
+      class="relative grid grid-cols-1 sm:grid-cols-4 hover:bg-white/30 dark:hover:bg-black/30 hover:shadow-sm p-4 rounded-md mb-4 transition-all"
+    >
+      <div class="text-sm pb-1 sm:pt-1 sm:pb-0">
+        {{ achievement.year }}
+        <div class="inline ml-2 sm:ml-0 sm:block text-sm text-slate-500">
+          {{ achievement.category }}
+        </div>
+      </div>
+      <div class="sm:col-span-3">
+        <h3
+          class="transition-colors group-hover:text-slate-950 dark:group-hover:text-slate-50"
+        >
+          {{ achievement.title }}
+        </h3>
+        <div class="mt-1 mb-4 text-sm text-slate-600 dark:text-slate-400">
+          {{ achievement.description | markdownify }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  
