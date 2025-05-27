@@ -1,0 +1,129 @@
+@keyframes TechTitleSlideUp {
+    from {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-4%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(4%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 5% 10% 5%;
+}
+
+.skills h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 3.5rem;
+    text-align: center;
+    opacity: 0;
+    color: #08415c;
+    animation: TitleSlideUp 1s ease-out forwards;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.skill-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    width: calc(40% - 1rem);
+    margin: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.expanded {
+    width: calc(40% - 1rem);
+}
+
+.skill-card h5 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.skill-card ul {
+    font-size: 0.9rem;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.skill-card li {
+    list-style-type: disc;
+    margin-bottom: 0.3rem;
+}
+
+.skill-card:hover {
+    transform: scale(1.01);
+}
+
+.slide-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.slide-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.even:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(8, 65, 92, 0.2);
+}
+
+.odd:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(204, 41, 54, 0.2);
+}
+
+.skills-row:last-child {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .skills-row {
+        width: 95%;
+    }
+    
+    .skill-card {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .expanded {
+        width: 100%;
+    }
+}
+

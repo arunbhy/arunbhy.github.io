@@ -1,0 +1,141 @@
+@keyframes ProjectSlideLeft {
+    from {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes ProjectSlideRight {
+    from {
+        transform: translateX(2%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes ProjectSlideUp {
+    from {
+        transform: translateY(-2%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 3% 5% 10% 5%;
+}
+
+.projects h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 6%;
+    text-align: center;
+    opacity: 0;
+    color: #08415c;
+    animation: ProjectSlideUp 1s ease-out forwards;
+}
+
+.project-card {
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem;
+    gap: 2rem;
+}
+
+.project-card-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    animation: ProjectSlideLeft 1s ease-out forwards;
+}
+
+.project-card-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-card-right {
+    flex: 3;
+    max-width: 50%;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: ProjectSlideRight 1s ease-out forwards;
+}
+
+.project-card-right-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.project-card-right-header span {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-card h3 {
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.project-card p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.project-card h4{
+    color: #848884;
+    font-style: italic;
+    font-size: medium;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .project-card-right {
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .project-card-left img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,178 @@
+.education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3% 5% 10% 5%;
+}
+
+.education h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 0 3%;
+    text-align: center;
+    opacity: 0;
+    color: #08415c;
+    animation: TitleSlideUp 2s ease-out forwards;
+}
+
+.education-card-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.degree {
+    position: relative;
+    flex: 1 1 45%;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+
+.degree-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2.5rem;
+    border-radius: 40%;
+    object-fit: cover;
+}
+
+.degree h2 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.degree p {
+    margin: 0.5rem 0;
+}
+
+.degree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.coursework {
+    width: 100%;
+}
+
+.coursework-item {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.coursework-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #08415c, #0a5275);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.coursework-item:hover {
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #08415c, #0a5275);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.coursework-item:hover::before {
+    opacity: 0;
+}
+
+.button-light-container {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+@keyframes TitleSlideUp {
+    from {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes CardSlideRight {
+    from {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes CardSlideLeft {
+    from {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+/* Dark mode styles */
+.dark-theme .degree {
+    background-color: var(--card-bg);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .coursework-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.dark-theme .coursework-item::before {
+    background: linear-gradient(45deg, #cc2936, #8b0000);
+}
+
+.dark-theme .coursework-item:hover {
+    color: white;
+    background: linear-gradient(45deg, #cc2936, #8b0000);
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .degree h2,
+.dark-theme .degree h5,
+.dark-theme .degree p,
+.dark-theme .degree-date {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
