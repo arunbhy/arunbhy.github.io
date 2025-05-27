@@ -1,52 +1,148 @@
-# About this repo
+# Portfolio Website
 
-The repo is the source code for [jonnycarroll.dev](https://jonnycarroll.dev).
+A modern, responsive portfolio website built with React and Vite, featuring a clean design and smooth animations.
 
-> Imitation is the highest form of flattery.
+## Features
 
-This site was built entirely by my hands, from scratch, using a combination of Jekyll, Tailwind and Alpine.js.
-However, I would like to give a big shout out to [Brittany Chiang](https://brittanychiang.com/) for much inspiration.
+- 🌓 Dark/Light mode toggle
+- 📱 Fully responsive design
+- 🎨 Modern UI with smooth animations
+- 📝 Sections for About, Skills, Projects, Education, Achievements, and Contact
+- 🔗 Social media integration
+- 🎯 Smooth scrolling navigation
+- ✨ Framer Motion animations for enhanced user experience
 
-I am happy to pay it forward. If you would like to fork this site
-**please go ahead, but you must have attribution to [jonnycarroll.dev](https://jonnycarroll.dev) visible on your site**.
-Maybe give this repo a star too if you do not mind.
+## Tech Stack
 
-Getting Jekyll and Tailwind to play together took a little bit of searching and tinkering but overall, the combination is super easy to work with.
-Add in Alpine.js and overall you have a very quick and easy way to build ann interactive static website.
+- React.js
+- Vite
+- Bootstrap
+- CSS3
+- React Type Animation
+- React Bootstrap
+- React Anchor Link Smooth Scroll
+- Framer Motion
 
-# Running the site locally
+## Prerequisites
 
-## Pre-requisites
+Before you begin, ensure you have the following installed:
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+- Git
 
-Before you go any further:
-1. [Install Jekyll](https://jekyllrb.com/docs/installation/)
-2. [Install Node](https://nodejs.org/en/download/package-manager)
+## Installation
 
-## Getting start with development
-
-For local development, use the following script to view your site:
-
-```shell
-./run-dev.sh
-# runs: bundle exec jekyll serve --livereload
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
 ```
 
-`--livereload` updates the browser real-time as you make changes to your code.
-
-# Releasing changes to the interwebs
-
-You can test your build with the following script:
-
-```shell
-./run-build.sh
-# runs: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+2. Install dependencies:
+```bash
+npm install
 ```
 
-This site comes with a GitHub Workflow to deploy to your GitHub Pages site.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-You will need to configure GitHub Pages on your account:
-1. Go to your repo settings
-2. Select Pages from the left hand menu
-3. If you have not already done so, follow the instructions for setting up your Pages site
-4. For Build and deployment, select GitHub Actions for `Source`
-5. Every time you commit changes to `main` the GitHub Workflow will trigger
+The site will be available at `http://localhost:5173`
+
+## Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── components/     # React components
+│   ├── assets/        # Images and other static files
+│   ├── context/       # React context providers
+│   ├── App.jsx        # Main App component
+│   └── main.jsx       # Entry point
+├── public/            # Static files
+└── index.html         # HTML template
+```
+
+## Deployment Guide
+
+### Deploying to GitHub Pages
+
+1. Install GitHub Pages package:
+```bash
+npm install gh-pages --save-dev
+```
+
+2. Update package.json (already configured):
+```json
+{
+  "homepage": "https://your-username.github.io/portfolio/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
+```
+
+3. Build and deploy:
+```bash
+npm run build
+npm run deploy
+```
+
+4. Configure GitHub Repository:
+   - Go to repository Settings > Pages
+   - Select "gh-pages" branch as source
+   - Wait for deployment (usually takes a few minutes)
+
+### Alternative Deployment Options
+
+#### Netlify
+1. Create a Netlify account
+2. Connect your GitHub repository
+3. Configure build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+
+#### Vercel
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
+2. Deploy:
+```bash
+vercel
+```
+
+## Customization
+
+### Changing Content
+- Update text content in respective component files
+- Modify images in the `src/assets` directory
+- Update project details in `src/assets/files/ProjectDetails.js`
+- Update skills in `src/assets/files/SkillsDetails.js`
+- Update achievements in `src/assets/files/AchievementsDetails.js`
+
+### Styling
+- Main styles are in individual component CSS files
+- Global styles in `src/App.css`
+- Theme colors can be modified in CSS variables
+- Animation configurations can be adjusted in component files
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+
+Project Link: [https://github.com/your-username/portfolio](https://github.com/your-username/portfolio) 
