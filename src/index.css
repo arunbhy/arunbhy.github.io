@@ -1,12 +1,12 @@
 :root {
   --background-color: #ffffff;
   --text-color: #333333;
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
+  --primary-color: #08415c;
+  --secondary-color: #cc2936;
   --border-color: #dee2e6;
   --heading-color: #333333;
-  --link-color: #007bff;
-  --link-hover-color: #0056b3;
+  --link-color: #08415c;
+  --link-hover-color: #0a5275;
   --card-bg: #ffffff;
   --navbar-bg: #f8f9fa;
 }
@@ -14,12 +14,12 @@
 .dark-theme {
   --background-color: #1a1a1a;
   --text-color: #e0e0e0;
-  --primary-color: #0d6efd;
-  --secondary-color: #adb5bd;
+  --primary-color: #cc2936;
+  --secondary-color: #08415c;
   --border-color: #495057;
   --heading-color: #ffffff;
-  --link-color: #4dabf7;
-  --link-hover-color: #74c0fc;
+  --link-color: #cc2936;
+  --link-hover-color: #ff4444;
   --card-bg: #2d2d2d;
   --navbar-bg: #2d2d2d;
 }
