@@ -34,7 +34,7 @@ html {
     align-items: center;
     width: 100%;
     height: auto;
-    background: linear-gradient(to right, #08415c, #cc2936);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%);
     padding: 3% 5% 10% 5%;
 }
@@ -62,8 +62,8 @@ html {
     margin-top: 0.8rem;
     font-size: small;
     padding: 0.8rem;
-    background-color: #333333;
-    color: #fff;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     border-radius: 1rem;
     display: flex;
 }
@@ -86,8 +86,8 @@ html {
     top: 3rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333333;
-    color: rgb(249, 248, 248);
+    background-color: var(--card-bg);
+    color: var(--text-color);
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 0.6rem;
@@ -112,16 +112,16 @@ html {
 
 /* Update the contact section gradient for dark mode */
 .dark-theme .contact {
-    background: linear-gradient(to right, #cc2936, #08415c);  /* Reversed gradient */
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .dark-theme .contact h1,
 .dark-theme .contact h2 {
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 .dark-theme .contact .notification {
-    background-color: rgba(8, 65, 92, 0.2);  /* Updated notification background */
-    border: 1px solid rgba(8, 65, 92, 0.3);
+    background-color: rgba(var(--secondary-color-rgb), 0.2);
+    border: 1px solid rgba(var(--secondary-color-rgb), 0.3);
 }

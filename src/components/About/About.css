@@ -47,7 +47,7 @@ html {
     align-items: center;
     width: 100%;
     height: auto;
-    background: linear-gradient(to right, #08415c, #cc2936);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     padding: 3% 5% 10% 5%;
 }
@@ -152,19 +152,19 @@ html {
 
 /* Dark mode styles for about section */
 .dark-theme .about {
-    background: linear-gradient(to right, #cc2936, #08415c);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
 .dark-theme .about-right p {
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 .dark-theme .about-left img {
-    border: 2px solid rgba(8, 65, 92, 0.3);
-    box-shadow: 0 0 15px rgba(8, 65, 92, 0.2);
+    border: 2px solid rgba(var(--secondary-color-rgb), 0.3);
+    box-shadow: 0 0 15px rgba(var(--secondary-color-rgb), 0.2);
 }
 
 .dark-theme .about-title {
-    color: #e0e0e0;
-    text-shadow: 0 0 10px rgba(204, 41, 54, 0.3);
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.3);
 }

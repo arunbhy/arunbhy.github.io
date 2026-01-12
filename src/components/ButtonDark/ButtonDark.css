@@ -40,10 +40,10 @@ html {
 }
 
 .button-dark:hover {
-    color: #08415c;
+    color: var(--primary-color);
     background: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(8, 65, 92, 0.2);
+    box-shadow: 0 4px 8px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .button-dark:hover::before {
@@ -53,16 +53,16 @@ html {
 /* Dark mode styles for ButtonDark */
 .dark-theme .button-dark {
     color: white;
-    border-color: #cc2936;
+    border-color: var(--primary-color);
 }
 
 .dark-theme .button-dark::before {
-    background-color: #cc2936;
+    background-color: var(--primary-color);
 }
 
 .dark-theme .button-dark:hover {
-    color: #cc2936;
+    color: var(--primary-color);
     background: var(--card-bg);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(204, 41, 54, 0.2);
+    box-shadow: 0 4px 8px rgba(var(--primary-color-rgb), 0.2);
 }

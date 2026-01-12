@@ -12,7 +12,7 @@
     margin: 0 0 3%;
     text-align: center;
     opacity: 0;
-    color: #08415c;
+    color: var(--primary-color);
     animation: TitleSlideUp 2s ease-out forwards;
 }
 
@@ -32,7 +32,7 @@
     padding: 2rem;
     border-radius: 0.5rem;
     box-sizing: border-box;
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
     
@@ -87,7 +87,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #08415c, #0a5275);
+    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
@@ -97,7 +97,7 @@
     border-color: transparent;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, #08415c, #0a5275);
+    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -158,12 +158,12 @@
 }
 
 .dark-theme .coursework-item::before {
-    background: linear-gradient(45deg, #cc2936, #8b0000);
+    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
 }
 
 .dark-theme .coursework-item:hover {
     color: white;
-    background: linear-gradient(45deg, #cc2936, #8b0000);
+    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
     -webkit-background-clip: initial;
     background-clip: initial;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

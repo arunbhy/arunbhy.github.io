@@ -77,11 +77,11 @@
 
 /* Smooth icon transitions */
 .theme-toggle-btn.light .sun-icon {
-  color: #08415c;
+  color: var(--primary-color);
 }
 
 .theme-toggle-btn.dark .moon-icon {
-  color: #cc2936;
+  color: var(--primary-color);
 }
 
 /* Subtle glow effect */

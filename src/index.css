@@ -9,6 +9,8 @@
   --link-hover-color: #0a5275;
   --card-bg: #ffffff;
   --navbar-bg: #f8f9fa;
+  --primary-color-rgb: 8, 65, 92;  /* #08415c */
+  --secondary-color-rgb: 204, 41, 54;  /* #cc2936 */
 }
 
 .dark-theme {
@@ -22,6 +24,8 @@
   --link-hover-color: #ff4444;
   --card-bg: #2d2d2d;
   --navbar-bg: #2d2d2d;
+  --primary-color-rgb: 204, 41, 54;  /* #cc2936 */
+  --secondary-color-rgb: 8, 65, 92;  /* #08415c */
 }
 
 body {
@@ -183,13 +187,13 @@ a:hover {
 /* Skills section button styles */
 .dark-theme #skills .button-light-container button {
   background-color: transparent !important;
-  border-color: #cc2936 !important;
-  color: #cc2936 !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 .dark-theme #skills .button-light-container button:hover {
-  background-color: #cc2936 !important;
-  border-color: #cc2936 !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
   color: white !important;
 }
 /* About section dark theme styles */
@@ -206,12 +210,12 @@ a:hover {
 }
 
 .dark-theme .about .button-dark-container button {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
   color: white !important;
 }
 
 .dark-theme .about .button-dark-container button:hover {
-  background-color: #bb2d3b !important;
-  border-color: #bb2d3b !important;
+  background-color: var(--link-hover-color) !important;
+  border-color: var(--link-hover-color) !important;
 }
