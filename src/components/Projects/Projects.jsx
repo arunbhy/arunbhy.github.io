@@ -43,7 +43,7 @@ const Projects = () => {
                         </div>
                         <h4>{project.subtitle}</h4>
                         <p>{project.summary}</p>
-                        <a href={project.link} target="_blank"><ButtonLight text="View Repository" /></a>
+                        <a href={project.link} target="_blank" rel="noopener noreferrer"><ButtonLight text="View Repository" /></a>
                     </div>
                 </div>
             ))}
