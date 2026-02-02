@@ -52,20 +52,21 @@ const Achievements = () => {
                         <h4>{achievement.organization}</h4>
                         <p>{achievement.summary}</p>
                         {achievement.link && (
-                            <ButtonLight 
-                                text={achievement.linkText || "View Details"} 
-                                link={achievement.link}
-                            />
+                            <a
+                                href={achievement.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="achievement-link-button"
+                            >
+                                {achievement.linkText || "View Details"}
+                            </a>
                         )}
                     </div>
                 </div>
             ))}
             {achievements.length > 3 && (
                 <div className="toggle-button" onClick={toggleAchievements}>
-                    <ButtonLight 
-                        text={showAllAchievements ? "Show Less" : "Show More"} 
-                        onClick={toggleAchievements}
-                    />
+                    <ButtonLight text={showAllAchievements ? "Show Less" : "Show More"} />
                 </div>
             )}
         </div>
