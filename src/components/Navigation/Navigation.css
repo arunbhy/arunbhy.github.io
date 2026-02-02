@@ -1,0 +1,31 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.navbar-logo {
+    height: 2rem;
+}
+
+.navbar .navbar-brand {
+    margin-right: auto;
+}
+
+.navbar .nav-link {
+    color: #555;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    
+    .navigation-contents {
+        text-align: center;
+    }
+}
