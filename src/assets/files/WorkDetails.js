@@ -1,5 +1,13 @@
 const work = [
     {
+        name: `VITG`,
+        time: `Jun 2025 - Aug 2025 · 3 mos`,
+        location: `Ellicott City, Maryland, United States · On-site`,
+        role: `Data Science Intern`,
+        summary: `Focused on using data science to improve reliability and decision-making across large-scale cloud infrastructure. Work involved analyzing operational and log data to identify failure patterns, building automated monitoring and remediation workflows, and designing dashboards to surface infrastructure health and incident trends. Close collaboration with engineering and operations teams helped translate analytical findings into practical automation that reduced response times and manual effort.`,
+        image: `images/vitg_logo.jpeg`
+    },
+    {
         name: `UnitedHealth Group (Optum Global Solutions)`,
         time: `April 2023 - June 2024`,
         location: `Noida, UP, India`,
