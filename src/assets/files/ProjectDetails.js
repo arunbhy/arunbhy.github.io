@@ -20,7 +20,7 @@ const projectList = [
         subtitle: `AI-Powered Travel Planning System`,
         time: `October 2025`,
         summary: `Built distributed AI travel planning system that coordinated multiple domain services, such as flights, hotels, events, weather, and finance, through reasoning-driven orchestration layer. Project focused on enabling multi-step decision-making across services, allowing complex travel plans to be generated dynamically rather than through static queries. Delivered both web interface and conversational workflow, designed to feel intuitive while handling real-time data and coordination at scale.`,
-        image: `images/rag.png`,
+        image: `images/travel_genie.png`,
         link: `https://github.com/kautilyaa/TravelGenie`
     },
     {

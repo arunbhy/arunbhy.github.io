@@ -50,7 +50,7 @@ const achievements = [
     {
         type: "Patent Filed",
         year: "2024",
-        summary: "A patented model that optimizes image matching in templated form processing workflows. Enhances document classification and retrieval efficiency by combining deep learning and image similarity measures.",
+        summary: "Form Processing Using Image Matching: A patented model that optimizes image matching in templated form processing workflows. Enhances document classification and retrieval efficiency by combining deep learning and image similarity measures.",
         image: "images/baadge_uhg.png",
         organization: "UnitedHealth Group",
         link: "https://www.credential.net/ba144ad4-9031-4dcf-89af-6398419f1e82#acc.LhbXOmz1",  // Add actual patent listing link if available
