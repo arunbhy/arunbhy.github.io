@@ -21,13 +21,21 @@ const skills = [
       "Large Language Models (LLMs)",
       "Retrieval-Augmented Generation (RAG)",
       "Agentic AI Systems",
+      "Model Context Protocol (MCP)",
+      "Agent Orchestration",
+      "Tool Use & Function Calling",
       "LLM Fine-tuning",
       "Prompt Engineering",
       "LangChain",
       "OpenAI APIs",
       "HuggingFace Transformers",
       "Azure OpenAI",
-      "Multi-modal LLM Integration"
+      "Multi-modal LLM Integration",
+      "Stable Diffusion",
+      "Diffusion Models",
+      "Text-to-Image Generation",
+      "Image Inpainting & Outpainting",
+      "Low Rank Adaptation (LoRA)"
     ]
   },
   {
