@@ -60,7 +60,7 @@ const projectList = [
         subtitle: `Associated with Vellore Institute of Technology`,
         time: `February 2020`,
         summary: `This digital platform addresses the growing antimicrobial resistance and slow drug development by analyzing data to guide antimicrobial stewardship and decision-making on drug usage.`,
-        image: `images/vitg_logo.jpeg`,
+        image: `images/amsp_logo.png`,
         link: `https://github.com/kautilyaa/AMSP`
     },
     {

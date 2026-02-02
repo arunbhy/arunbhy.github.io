@@ -35,7 +35,7 @@ const Education = () => {
                         {showMastersCoursework && (
                             <ListGroup variant="flush" className="coursework-list">
                                 <ListGroup.Item className="coursework-item">Natural Language Processing</ListGroup.Item>
-                                <ListGroup.Item className="coursework-item">Computer Vision</ListGroup.Item>
+                                <ListGroup.Item className="coursework-item">Deep Learning</ListGroup.Item>
                                 <ListGroup.Item className="coursework-item">Data Representation and Modeling</ListGroup.Item>
                                 <ListGroup.Item className="coursework-item">Big Data Systems</ListGroup.Item>
                                 <ListGroup.Item className="coursework-item">Algorithms of Data Science</ListGroup.Item>

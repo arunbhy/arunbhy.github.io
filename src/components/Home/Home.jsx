@@ -15,7 +15,7 @@ const Home = () => {
             
             'I am a Data Scientist.',
             1000,
-            'I am a Agentic AI Developer.',
+            'I am an Agentic AI Developer.',
             1000,
             'I am a Nerd.',
             1000,

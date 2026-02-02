@@ -47,13 +47,14 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--text-color);
+    color: var(--link-color);
     font-size: 3rem;
     margin-inline: 2rem;
     transition: all 0.2s ease-in;
 }
 
 .social-links a:hover {
+    color: var(--link-hover-color);
     transform: translateY(-2px);
 }
 
