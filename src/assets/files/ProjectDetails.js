@@ -4,7 +4,7 @@ const projectList = [
         subtitle: `Medical Text Simplification System`,
         time: `November 2025`,
         summary: `Developed medical text simplification system designed to make complex clinical content more accessible without compromising factual accuracy. Work combined neural language models with deterministic verification steps to ensure critical medical entities and relationships were preserved. Emphasis was placed on validation and safety, resulting in system that prioritized trust and correctness over surface-level fluency.`,
-        image: `images/paper_recom.png`,
+        image: `images/safesim_logo.png`,
         link: `https://github.com/kautilyaa/safesim`
     },
     {
@@ -12,7 +12,7 @@ const projectList = [
         subtitle: `Modular AI Agent Framework`,
         time: `September 2025 - November 2025`,
         summary: `Extended experimental design into modular local AI agent framework aimed at structured reasoning and controlled execution. System emphasized flexibility, allowing tools and data sources to be composed dynamically while maintaining clear boundaries between reasoning and action. Project explored how agent-based architectures could support experimentation, automation, and reproducibility in local development setting.`,
-        image: `images/rag.png`,
+        image: `images/terminus_logo.png`,
         link: `https://github.com/kautilyaa/TERMINUS`
     },
     {
@@ -28,7 +28,7 @@ const projectList = [
         subtitle: `Cryptocurrency Forecasting`,
         time: `January 2025`,
         summary: `Designed forecasting framework that combined real-time market data with news-driven sentiment signals to study short-term cryptocurrency price movements. Project explored how external sentiment could be incorporated into traditional time-series models and evaluated performance through back testing rather than one-off predictions. Focus remained on understanding signal contribution and robustness in noisy, volatile domain.`,
-        image: `images/rag.png`,
+        image: `images/bitcoin_logo.png`,
         link: `https://github.com/kautilyaa/BitPulse`
     },
     {
@@ -52,7 +52,7 @@ const projectList = [
         subtitle: `Field value validation`,
         time: `February 2021`,
         summary: `The code is on validation of field value based on field name.`,
-        image: `images/ticket_customer.png`,
+        image: `images/rag.png`,
         link: `https://github.com/kautilyaa/bug-free-lamp`
     },
     {
