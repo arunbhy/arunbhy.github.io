@@ -29,7 +29,7 @@ const Projects = () => {
                             animationDelay: "500ms"
                         }}
                     >
-                        <img src={project.image} alt="project image not available" />
+                        <img src={project.image} alt={project.title} loading="lazy" />
                     </div>
                     <div
                         className="project-card-right"

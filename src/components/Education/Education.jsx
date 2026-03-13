@@ -21,7 +21,7 @@ const Education = () => {
 
             <div className="education-card-row">
                 <div id="masters" className="degree">
-                    <img src="images/umd.jpeg" alt="University of Maryland" className="degree-img" />
+                    <img src="images/umd.jpeg" alt="University of Maryland" className="degree-img" loading="lazy" />
                     <div className="degree-header">
                         <h2>University of Maryland</h2>
                         <span className="degree-date">August 2024 - Present</span>
@@ -45,7 +45,7 @@ const Education = () => {
                 </div>
 
                 <div id="bachelors" className="degree">
-                    <img src="images/vit.jpeg" alt="Vellore Institute of Technology" className="degree-img" />
+                    <img src="images/vit.jpeg" alt="Vellore Institute of Technology" className="degree-img" loading="lazy" />
                     <div className="degree-header">
                         <h2>Vellore Institute of Technology</h2>
                         <span className="degree-date">July 2017 - June 2021</span>

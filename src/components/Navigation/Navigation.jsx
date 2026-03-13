@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import "./Navigation.css";
 
+const sections = ['home', 'about', 'professional', 'skills', 'projects', 'education', 'achievements', 'contact'];
+
 const Navigation = () => {
   const [expanded, setExpanded] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 120;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavClick = () => {
     setExpanded(false);
@@ -22,14 +41,16 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" className='navigation-contents'>
           <Nav className="ms-auto" navbarScroll>
-            <Nav.Link href="#home" onClick={handleNavClick}>Home</Nav.Link>
-            <Nav.Link href="#about" onClick={handleNavClick}>About</Nav.Link>
-            <Nav.Link href="#professional" onClick={handleNavClick}>Career</Nav.Link>
-            <Nav.Link href="#skills" onClick={handleNavClick}>Skills</Nav.Link>
-            <Nav.Link href="#projects" onClick={handleNavClick}>Projects</Nav.Link>
-            <Nav.Link href="#education" onClick={handleNavClick}>Education</Nav.Link>
-            <Nav.Link href="#achievements" onClick={handleNavClick}>Achievements</Nav.Link>
-            <Nav.Link href="#contact" onClick={handleNavClick}>Contact</Nav.Link>
+            {sections.map((section) => (
+              <Nav.Link
+                key={section}
+                href={`#${section}`}
+                onClick={handleNavClick}
+                className={activeSection === section ? 'nav-active' : ''}
+              >
+                {section === 'professional' ? 'Career' : section.charAt(0).toUpperCase() + section.slice(1)}
+              </Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>

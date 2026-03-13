@@ -9,23 +9,23 @@ const Footer = () => {
         <div className="footer">
             <div className="back-to-top-container">
                 <a rel="noreferrer" href="#home" className="back-to-top">
-                    <i className="fa fa-angle-up fa-3x" aria-hidden="true"></i>
+                    <i className="fa-solid fa-angle-up fa-3x" aria-hidden="true"></i>
                 </a>
                 <div className="social-links">
                     <a rel="noreferrer" href="https://www.linkedin.com/in/arunbh-yashaswi" target="_blank" aria-label="LinkedIn">
-                        <i className="fa fa-linkedin"></i>
+                        <i className="fa-brands fa-linkedin"></i>
                     </a>
                     <a rel="noreferrer" href="https://github.com/kautilyaa" target="_blank" aria-label="GitHub">
-                        <i className="fa fa-github"></i>
+                        <i className="fa-brands fa-github"></i>
                     </a>
                     <a rel="noreferrer" href="https://stackoverflow.com/users/13945615/arunbh-yashaswi" target="_blank" aria-label="Stack Overflow">
-                        <i className="fa fa-stack-overflow"></i>
+                        <i className="fa-brands fa-stack-overflow"></i>
                     </a>
                     <a rel="noreferrer" href="https://www.kaggle.com/arunbhy" target="_blank" aria-label="Kaggle">
-                        <i className="fa fa-bar-chart"></i>
+                        <i className="fa-brands fa-kaggle"></i>
                     </a>
                     <a rel="noreferrer" href="https://www.instagram.com/arunbhyashaswi/" target="_blank" aria-label="Instagram">
-                        <i className="fa fa-instagram"></i>
+                        <i className="fa-brands fa-instagram"></i>
                     </a>
                 </div>
             </div>

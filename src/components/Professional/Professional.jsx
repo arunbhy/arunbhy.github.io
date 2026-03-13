@@ -53,7 +53,7 @@ const Professional = () => {
                     ref={(el) => (workRefs.current[index] = el)}
                 >
                     <div className="work-card-content">
-                        <img src={item.image} alt={item.name} className="work-image" />
+                        <img src={item.image} alt={item.name} className="work-image" loading="lazy" />
                         <div className="work-details">
                             <div className="work-header">
                                 <h3>{item.name}</h3>

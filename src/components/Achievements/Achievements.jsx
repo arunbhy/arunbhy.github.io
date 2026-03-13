@@ -33,9 +33,10 @@ const Achievements = () => {
                             animationDelay: "500ms"
                         }}
                     >
-                        <img 
-                            src={achievement.image} 
-                            alt={achievement.type} 
+                        <img
+                            src={achievement.image}
+                            alt={achievement.type}
+                            loading="lazy"
                             onError={handleImageError}
                         />
                     </div>
