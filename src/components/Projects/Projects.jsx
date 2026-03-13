@@ -30,9 +30,16 @@ const ProjectCard = ({ project, index }) => {
                     </div>
                 )}
                 <p>{project.summary}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <ButtonLight text="View Repository" />
-                </a>
+                <div className="project-links">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <ButtonLight text="View Repository" />
+                    </a>
+                    {project.liveLink && (
+                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                            <ButtonLight text="Live Demo" />
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );

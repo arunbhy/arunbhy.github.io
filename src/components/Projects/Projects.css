@@ -132,6 +132,13 @@
     border-color: rgba(var(--primary-color-rgb), 0.3);
 }
 
+/* Project action links */
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
 .toggle-button {
     text-align: center;
     margin-top: 2rem;
