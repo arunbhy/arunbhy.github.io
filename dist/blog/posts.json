@@ -1,0 +1,130 @@
+[
+    {
+        "slug": "transformer-attention",
+        "title": "Understanding Transformer Attention Mechanisms",
+        "date": "2025-02-15",
+        "tags": ["NLP", "Deep Learning", "Transformers"],
+        "excerpt": "A deep dive into how self-attention works in transformer architectures — from scaled dot-product attention to multi-head attention and positional encodings.",
+        "readTime": 8
+    },
+    {
+        "slug": "multi-agent-systems",
+        "title": "Building Multi-Agent Systems with LLMs",
+        "date": "2025-03-20",
+        "tags": ["LLM", "Agents", "Architecture"],
+        "excerpt": "How to design multi-agent systems that break complex tasks into specialized roles — architecture patterns, communication strategies, and practical lessons from building agent orchestration systems.",
+        "readTime": 9
+    },
+    {
+        "slug": "fine-tuning-embeddings",
+        "title": "Fine-Tuning Embeddings for Domain-Specific Retrieval",
+        "date": "2025-03-05",
+        "tags": ["NLP", "RAG", "Embeddings"],
+        "excerpt": "Off-the-shelf embedding models leave performance on the table for specialized domains. A practical guide to fine-tuning sentence transformers with hard negatives for better retrieval.",
+        "readTime": 7
+    },
+    {
+        "slug": "diffusion-models-explained",
+        "title": "Diffusion Models Explained: From Noise to Images",
+        "date": "2025-02-28",
+        "tags": ["Deep Learning", "Computer Vision", "Generative AI"],
+        "excerpt": "How diffusion models actually work — the forward noise process, reverse denoising, U-Net architecture, latent diffusion, and classifier-free guidance explained step by step.",
+        "readTime": 10
+    },
+    {
+        "slug": "prompt-engineering-production",
+        "title": "Prompt Engineering for Production Systems",
+        "date": "2025-02-05",
+        "tags": ["LLM", "MLOps", "Engineering"],
+        "excerpt": "Production prompt engineering is about reliability, not cleverness. Structured output, prompt versioning, A/B testing, cost optimization, and error handling patterns that work at scale.",
+        "readTime": 8
+    },
+    {
+        "slug": "getting-started-with-rag",
+        "title": "Getting Started with RAG: Retrieval-Augmented Generation",
+        "date": "2025-01-10",
+        "tags": ["LLM", "RAG", "NLP"],
+        "excerpt": "A practical guide to building retrieval-augmented generation systems — chunking strategies, embedding models, vector stores, and common pitfalls.",
+        "readTime": 7
+    },
+    {
+        "slug": "vector-database-hybrid-search",
+        "title": "Hybrid Search in Vector Databases: Combining Keyword and Semantic Search",
+        "date": "2025-01-25",
+        "tags": ["RAG", "Search", "Vector Databases"],
+        "excerpt": "Pure vector search misses things. Pure keyword search misses things. How to combine both with reciprocal rank fusion, weighted combination, and conditional routing for better retrieval.",
+        "readTime": 8
+    },
+    {
+        "slug": "llm-evaluation-metrics",
+        "title": "Evaluating LLM Applications: Metrics That Actually Matter",
+        "date": "2025-01-15",
+        "tags": ["LLM", "Evaluation", "MLOps"],
+        "excerpt": "Traditional ML metrics don't work for generative AI. A practical framework for LLM evaluation — from ROUGE and BERTScore to LLM-as-judge, RAG faithfulness, and building evaluation pipelines.",
+        "readTime": 9
+    },
+    {
+        "slug": "ocr-pipeline-optimization",
+        "title": "OCR Pipeline Optimization: Lessons from Production",
+        "date": "2024-11-20",
+        "tags": ["Computer Vision", "OCR", "MLOps"],
+        "excerpt": "Practical lessons learned from optimizing a document processing pipeline handling 45,000+ forms per month — from batching strategies to model serving patterns.",
+        "readTime": 6
+    },
+    {
+        "slug": "document-layout-analysis",
+        "title": "Document Layout Analysis with Deep Learning",
+        "date": "2024-12-10",
+        "tags": ["Computer Vision", "OCR", "Deep Learning"],
+        "excerpt": "Before you can extract text from a document, you need to understand its structure. How modern object detection models handle layout parsing, table extraction, and reading order.",
+        "readTime": 9
+    },
+    {
+        "slug": "feature-engineering-credit-risk",
+        "title": "Feature Engineering for Credit Risk Models",
+        "date": "2024-10-15",
+        "tags": ["Machine Learning", "Finance", "Feature Engineering"],
+        "excerpt": "In credit risk modeling, feature engineering dominates model architecture choices. Payment behavior features, utilization trends, interaction features, and model stacking for production.",
+        "readTime": 8
+    },
+    {
+        "slug": "sentiment-analysis-financial-markets",
+        "title": "Sentiment Analysis for Financial Market Prediction",
+        "date": "2024-09-25",
+        "tags": ["NLP", "Finance", "Time Series"],
+        "excerpt": "Can social media sentiment predict price movements? Building a real-time cryptocurrency forecasting system combining NLP with time series analysis — what worked and what didn't.",
+        "readTime": 8
+    },
+    {
+        "slug": "model-monitoring-drift-detection",
+        "title": "Model Monitoring and Drift Detection in Production",
+        "date": "2024-12-28",
+        "tags": ["MLOps", "Monitoring", "Machine Learning"],
+        "excerpt": "Your model works great on launch day. Three months later, accuracy has quietly dropped 15%. How to detect data drift, concept drift, and prediction drift before your users notice.",
+        "readTime": 9
+    },
+    {
+        "slug": "deploying-ml-models-azure",
+        "title": "Deploying ML Models on Azure: A Practical Guide",
+        "date": "2024-11-05",
+        "tags": ["MLOps", "Azure", "Deployment"],
+        "excerpt": "Getting a model to work in a notebook is 20% of the job. Containerization, Azure Container Apps, auto-scaling, model versioning, and performance optimization for production ML services.",
+        "readTime": 8
+    },
+    {
+        "slug": "medical-text-simplification",
+        "title": "Medical Text Simplification: NLP Meets Patient Safety",
+        "date": "2024-10-30",
+        "tags": ["NLP", "Healthcare", "Safety"],
+        "excerpt": "Simplifying medical text without losing clinical accuracy — the architecture, safety validation pipeline, and the hardest edge cases: negation flips, dosage preservation, and hedging.",
+        "readTime": 7
+    },
+    {
+        "slug": "data-preprocessing-pipelines",
+        "title": "Building Robust Data Preprocessing Pipelines",
+        "date": "2024-08-15",
+        "tags": ["Machine Learning", "Data Engineering", "Python"],
+        "excerpt": "The most impactful work in any ML project happens before the model. Reproducible pipelines, missing data strategies, feature encoding, outlier handling, and data validation patterns.",
+        "readTime": 8
+    }
+]
