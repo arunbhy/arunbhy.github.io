@@ -1,0 +1,26 @@
+[
+    {
+        "slug": "transformer-attention",
+        "title": "Understanding Transformer Attention Mechanisms",
+        "date": "2025-02-15",
+        "tags": ["NLP", "Deep Learning", "Transformers"],
+        "excerpt": "A deep dive into how self-attention works in transformer architectures — from scaled dot-product attention to multi-head attention and positional encodings.",
+        "readTime": 8
+    },
+    {
+        "slug": "ocr-pipeline-optimization",
+        "title": "OCR Pipeline Optimization: Lessons from Production",
+        "date": "2024-11-20",
+        "tags": ["Computer Vision", "OCR", "MLOps"],
+        "excerpt": "Practical lessons learned from optimizing a document processing pipeline handling 45,000+ forms per month — from batching strategies to model serving patterns.",
+        "readTime": 6
+    },
+    {
+        "slug": "getting-started-with-rag",
+        "title": "Getting Started with RAG: Retrieval-Augmented Generation",
+        "date": "2025-01-10",
+        "tags": ["LLM", "RAG", "NLP"],
+        "excerpt": "A practical guide to building retrieval-augmented generation systems — chunking strategies, embedding models, vector stores, and common pitfalls.",
+        "readTime": 7
+    }
+]
