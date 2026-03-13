@@ -8,7 +8,7 @@ const AchievementCard = ({ achievement, index }) => {
     const [ref, isInView] = useInView();
 
     const handleImageError = (e) => {
-        e.target.src = '/images/logo.webp';
+        e.target.src = 'images/logo.webp';
     };
 
     return (

@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="back-to-top-container">
-                <a rel="noreferrer" href="#home" className="back-to-top">
+                <a rel="noreferrer" href="#/" className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <i className="fa-solid fa-angle-up fa-3x" aria-hidden="true"></i>
                 </a>
                 <div className="social-links">
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
             <hr />
             <p>
-                &copy; {year} - Created and maintained by <a rel="noreferrer" href="/">Arunbh Yashaswi</a>
+                &copy; {year} - Created and maintained by <a rel="noreferrer" href="#/">Arunbh Yashaswi</a>
             </p>
 
         </footer>

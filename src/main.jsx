@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { HashRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import App from './App.jsx'
+import AppRouter from './AppRouter.jsx'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx'
 import { ThemeProvider } from './context/ThemeContext'
 import './index.css'
@@ -10,7 +11,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ErrorBoundary>
       <ThemeProvider>
-        <App />
+        <HashRouter>
+          <AppRouter />
+        </HashRouter>
       </ThemeProvider>
     </ErrorBoundary>
   </React.StrictMode>,

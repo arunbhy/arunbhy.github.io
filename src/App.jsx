@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Home/Home";
@@ -10,13 +11,23 @@ import Projects from "./components/Projects/Projects";
 import BackgroundEffects from "./components/BackgroundEffects/BackgroundEffects";
 import Achievements from "./components/Achievements/Achievements";
 import Timeline from "./components/Timeline/Timeline";
-import Blog from "./components/Blog/Blog";
 import SectionDivider from "./components/SectionDivider/SectionDivider";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 
 const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        const el = document.getElementById(location.state.scrollTo);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [location.state]);
+
   return (
     <>
       <a href="#about" className="skip-to-content">Skip to content</a>
@@ -32,7 +43,6 @@ const App = () => {
         <SectionDivider type="grid" />
         <Projects />
         <Achievements />
-        <Blog />
         <Contact />
       </main>
       <Footer />
