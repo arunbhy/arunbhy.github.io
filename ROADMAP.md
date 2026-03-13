@@ -41,11 +41,12 @@
 - [x] Blog/writing section — separate pages, markdown rendering, Medium-inspired design
 - [x] Client-side routing — HashRouter with `react-router-dom`
 - [x] Hyperlink sanity check — fixed nav from blog pages, footer links, asset paths
+- [x] Blog content — 16 posts covering transformers, RAG, agents, diffusion models, OCR, credit risk, sentiment analysis, medical NLP, MLOps, and more
 
 ## Needs User Action
 
 - [ ] **Formspree endpoint** — replace `arunbh.y@gmail.com` in `Contact.jsx` with actual Formspree form ID (e.g. `https://formspree.io/f/xabcdefg`). Create a free account at [formspree.io](https://formspree.io).
-- [ ] **Blog content** — replace sample posts in `public/blog/` with your own writing. Edit `posts.json` for metadata and add `.md` files.
+- [ ] **Blog content** — review and personalize the 16 blog posts in `public/blog/` with your own anecdotes and project-specific details.
 
 ## Nice to Have
 
