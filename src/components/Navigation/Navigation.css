@@ -1,12 +1,12 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
 .navbar-logo {
     height: 2rem;
+}
+
+.navbar-fixed {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .navbar .navbar-brand {
@@ -14,18 +14,26 @@ html {
 }
 
 .navbar .nav-link {
-    color: #555;
-    margin-left: 1.5rem;
-    margin-right: 1rem;
+    color: var(--text-color);
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 991px) {
     .navbar .nav-link {
-        margin: 0.5rem 0;
+        margin: 0.4rem 0;
         text-align: center;
+        padding: 0.6rem 1rem;
     }
-    
+
     .navigation-contents {
         text-align: center;
+        padding: 0.5rem 0;
     }
 }

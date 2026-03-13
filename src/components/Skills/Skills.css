@@ -3,7 +3,6 @@
         transform: translateY(-5%);
         opacity: 0;
     }
-
     to {
         transform: translateY(0%);
         opacity: 1;
@@ -15,7 +14,6 @@
         transform: translateX(-4%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0);
         opacity: 1;
@@ -27,7 +25,6 @@
         transform: translateX(4%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0);
         opacity: 1;
@@ -38,43 +35,47 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3% 5% 10% 5%;
+    padding: 5rem 5% 4rem;
+    box-sizing: border-box;
 }
 
 .skills h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-top: 3.5rem;
+    margin-bottom: 3rem;
     text-align: center;
     opacity: 0;
     color: var(--primary-color);
-    animation: TitleSlideUp 1s ease-out forwards;
+    animation: TechTitleSlideUp 1s ease-out forwards;
 }
 
 .skills-row {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .skill-card {
     background-color: var(--card-bg);
-    padding: 1rem;
-    width: calc(40% - 1rem);
-    margin: 1rem;
+    padding: 1.5rem;
+    width: calc(50% - 1.5rem);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     opacity: 0;
     box-sizing: border-box;
 }
 
 .expanded {
-    width: calc(40% - 1rem);
+    width: calc(50% - 1.5rem);
 }
 
 .skill-card h5 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
 .skill-card ul {
@@ -89,7 +90,8 @@
 }
 
 .skill-card:hover {
-    transform: scale(1.01);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .slide-left {
@@ -108,22 +110,31 @@
     box-shadow: 0 0.25rem 0.5rem rgba(var(--secondary-color-rgb), 0.2);
 }
 
-.skills-row:last-child {
-    justify-content: center;
+.show-button {
+    margin-top: 0.8rem;
 }
 
 @media (max-width: 768px) {
-    .skills-row {
-        width: 95%;
+    .skills {
+        padding: 4rem 1rem 3rem;
     }
-    
+
+    .skills h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .skills-row {
+        width: 100%;
+        gap: 0.75rem;
+    }
+
     .skill-card {
         width: 100%;
-        margin: 0.5rem 0;
+        padding: 1.2rem;
     }
-    
+
     .expanded {
         width: 100%;
     }
 }
-

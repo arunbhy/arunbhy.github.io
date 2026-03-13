@@ -12,7 +12,6 @@ const Home = () => {
           sequence={[
             'I am a Data Enthusiast.',
             1000,
-            
             'I am a Data Scientist.',
             1000,
             'I am an Agentic AI Developer.',
@@ -24,7 +23,7 @@ const Home = () => {
           ]}
           wrapper="div"
           speed={10}
-          style={{ fontSize: '4rem', display: 'inline-block' }}
+          className="type-animation-text"
           repeat={Infinity}
         />
       </div>

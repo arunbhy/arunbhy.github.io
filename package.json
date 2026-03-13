@@ -14,9 +14,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "framer-motion": "^12.14.0",
     "react": "^18.2.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-type-animation": "^3.2.0"

@@ -3,7 +3,6 @@
         transform: translateX(5%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0%);
         opacity: 1;
@@ -11,7 +10,8 @@
 }
 
 @keyframes ContactSlideUp {
-    from {transform: translateY(100%);
+    from {
+        transform: translateY(100%);
         opacity: 0;
     }
     to {
@@ -20,13 +20,10 @@
     }
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
-
 
 .contact {
     display: flex;
@@ -35,16 +32,16 @@ html {
     width: 100%;
     height: auto;
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%);
-    padding: 3% 5% 10% 5%;
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);
+    padding: 8rem 5% 5rem;
+    box-sizing: border-box;
 }
 
 .contact h1 {
     font-size: 2.5rem;
     font-weight: 600;
     color: white;
-    margin-top: 10%;
-    margin-bottom: 6%;
+    margin-bottom: 2rem;
     text-align: center;
     opacity: 0;
     animation: ContactAppear 1s ease-out forwards;
@@ -53,19 +50,8 @@ html {
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    margin-top: 1.4rem;
     color: white;
     font-weight: 500;
-}
-
-.notification {
-    margin-top: 0.8rem;
-    font-size: small;
-    padding: 0.8rem;
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border-radius: 1rem;
-    display: flex;
 }
 
 .contact-content {
@@ -79,6 +65,7 @@ html {
 .contact-button-container {
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .copied-animation {
@@ -88,40 +75,34 @@ html {
     transform: translateX(-50%);
     background-color: var(--card-bg);
     color: var(--text-color);
-    padding: 0.5rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 0.5rem;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     animation: fadeOut 1.5s forwards;
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
+    .contact {
+        clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+        padding: 6rem 1.5rem 4rem;
+    }
+
     .contact h1 {
         font-size: 2rem;
-        margin-top: 15%;
     }
-    
+
     .contact h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        text-align: center;
     }
 }
 
-/* Update the contact section gradient for dark mode */
 .dark-theme .contact {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .dark-theme .contact h1,
 .dark-theme .contact h2 {
     color: var(--text-color);
-}
-
-.dark-theme .contact .notification {
-    background-color: rgba(var(--secondary-color-rgb), 0.2);
-    border: 1px solid rgba(var(--secondary-color-rgb), 0.3);
 }

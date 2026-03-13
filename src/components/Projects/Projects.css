@@ -3,7 +3,6 @@
         transform: translateX(-5%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0%);
         opacity: 1;
@@ -15,7 +14,6 @@
         transform: translateX(2%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0%);
         opacity: 1;
@@ -27,18 +25,10 @@
         transform: translateY(-2%);
         opacity: 0;
     }
-
     to {
         transform: translateY(0%);
         opacity: 1;
     }
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
 }
 
 .projects {
@@ -47,13 +37,14 @@ html {
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 3% 5% 10% 5%;
+    padding: 5rem 5% 4rem;
+    box-sizing: border-box;
 }
 
 .projects h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 6%;
+    margin-bottom: 3rem;
     text-align: center;
     opacity: 0;
     color: var(--primary-color);
@@ -62,10 +53,19 @@ html {
 
 .project-card {
     display: flex;
-    width: 100%;
+    width: 85%;
     padding: 2rem;
-    margin: 2rem;
+    margin: 1rem 0;
     gap: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .project-card-left {
@@ -75,8 +75,9 @@ html {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     animation: ProjectSlideLeft 1s ease-out forwards;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .project-card-left img {
@@ -86,11 +87,8 @@ html {
 }
 
 .project-card-right {
-    flex: 3;
-    max-width: 50%;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
+    flex: 2;
+    padding: 1rem;
     opacity: 0;
     animation: ProjectSlideRight 1s ease-out forwards;
 }
@@ -99,41 +97,76 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-card-right-header span {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    white-space: nowrap;
 }
 
 .project-card h3 {
     font-weight: 500;
-    font-size: x-large;
+    font-size: 1.4rem;
 }
 
 .project-card p {
-    padding-top: 1rem;
+    padding-top: 0.8rem;
     padding-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.project-card h4{
+.project-card h4 {
     color: var(--secondary-color);
     font-style: italic;
-    font-size: medium;
+    font-size: 0.9rem;
+}
+
+.toggle-button {
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
+    .projects {
+        padding: 4rem 1rem 3rem;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .project-card {
         flex-direction: column;
-        padding: 1rem;
-        margin: 1rem 0;
+        width: 100%;
+        padding: 1.2rem;
+        margin: 0.5rem 0;
+        gap: 1rem;
     }
-    
+
     .project-card-right {
-        max-width: 100%;
-        padding: 1rem 0;
+        padding: 0;
     }
-    
+
+    .project-card-right-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
     .project-card-left img {
         width: 100%;
         height: auto;

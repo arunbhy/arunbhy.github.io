@@ -15,24 +15,22 @@ import Achievements from "./components/Achievements/Achievements";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <BackgroundEffects />
-        <Navigation />
-        <Home />
-        <About />
-        <Professional />
-        <Skills />
-        <Projects />
-        <Education />
-        <Achievements />
-        <Contact />
-        <Footer />
-      </div>
-    )
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <BackgroundEffects />
+      <Navigation />
+      <Home />
+      <About />
+      <Professional />
+      <Skills />
+      <Projects />
+      <Education />
+      <Achievements />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

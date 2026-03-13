@@ -1,11 +1,10 @@
 import React from "react";
 import "./ButtonDark.css";
 
-
-const ButtonDark = ( {text} ) => {
+const ButtonDark = ({ text }) => {
     return (
-        <p className="button-dark">{ text }</p>
-    )
-}
+        <button type="button" className="button-dark">{text}</button>
+    );
+};
 
 export default ButtonDark;
