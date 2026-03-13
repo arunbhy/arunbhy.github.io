@@ -101,6 +101,11 @@
     font-size: 0.9rem;
 }
 
+.dark-theme .achievement-card-right-header span,
+.dark-theme .achievement-card-right h4 {
+    color: #3d8ab0;
+}
+
 .achievement-card-right p {
     padding-top: 0.8rem;
     padding-bottom: 1rem;

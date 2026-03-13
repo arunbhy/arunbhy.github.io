@@ -159,7 +159,7 @@
 .blog-post-content pre {
     margin: 1.5rem 0;
     padding: 1.25rem 1.5rem;
-    background: #1a1a2e;
+    background: #0d1117;
     border-radius: 0.5rem;
     overflow-x: auto;
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -171,6 +171,12 @@
     font-size: 0.85rem;
     color: #e0e0e0;
     line-height: 1.6;
+}
+
+/* Override highlight.js background to match our code blocks */
+.blog-post-content pre code.hljs {
+    background: transparent;
+    padding: 0;
 }
 
 /* Tables */

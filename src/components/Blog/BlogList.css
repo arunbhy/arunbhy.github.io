@@ -22,6 +22,41 @@
     opacity: 0.6;
 }
 
+/* Tag filter bar */
+.blog-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-filter-tag {
+    font-size: 0.75rem;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blog-filter-tag:hover {
+    background: rgba(var(--primary-color-rgb), 0.08);
+    color: var(--primary-color);
+}
+
+.blog-filter-tag.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
 /* Post cards */
 .blog-list-grid {
     display: flex;

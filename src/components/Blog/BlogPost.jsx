@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.min.css";
 import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
 import "./BlogPost.css";
@@ -90,7 +92,7 @@ const BlogPost = () => {
                     </header>
 
                     <div className="blog-post-content">
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
                             {content}
                         </ReactMarkdown>
                     </div>

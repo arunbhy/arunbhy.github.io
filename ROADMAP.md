@@ -25,6 +25,7 @@
 - [x] Tech stack tags on project cards (Python, PyTorch, React, etc.)
 - [x] Convert images to WebP — 44.5MB → ~3.2MB (93% reduction)
 - [x] Contact form via Formspree with email fallback
+- [x] Formspree endpoint — connected to `https://formspree.io/f/mjgaokjr`
 - [x] Interactive career timeline — expandable cards pulling from work + education data
 - [x] Accessibility pass — keyboard nav, `focus-visible` styles, skip-to-content link
 - [x] Reduced motion support — `prefers-reduced-motion` disables all animations
@@ -42,11 +43,16 @@
 - [x] Client-side routing — HashRouter with `react-router-dom`
 - [x] Hyperlink sanity check — fixed nav from blog pages, footer links, asset paths
 - [x] Blog content — 16 posts covering transformers, RAG, agents, diffusion models, OCR, credit risk, sentiment analysis, medical NLP, MLOps, and more
+- [x] Project cards — optional live demo link alongside repository link
+- [x] Dark mode subtitle fix — lighter blue (`#4a9ec5`) for project/achievement subtitles
+- [x] Blog syntax highlighting — `rehype-highlight` with `github-dark` theme for colored code blocks
+- [x] Blog search/filter — tag filter bar on the blog listing page
+- [x] Favicon fallback — `.ico` fallback + `apple-touch-icon` for broad browser support
 
 ## Needs User Action
 
-- [ ] **Formspree endpoint** — replace `arunbh.y@gmail.com` in `Contact.jsx` with actual Formspree form ID (e.g. `https://formspree.io/f/xabcdefg`). Create a free account at [formspree.io](https://formspree.io).
-- [ ] **Blog content** — review and personalize the 16 blog posts in `public/blog/` with your own anecdotes and project-specific details.
+- [ ] **Blog content** — review and personalize the 16 blog posts in `public/blog/` with your own anecdotes and project-specific details
+- [ ] **Project live links** — add `liveLink` field to projects in `ProjectDetails.js` for any deployed demos
 
 ## Nice to Have
 
@@ -55,6 +61,3 @@
 - [ ] **Interactive skills visualization** — radar chart or force-directed graph instead of expandable cards
 - [ ] **Performance audit** — run Lighthouse and fix flagged issues
 - [ ] **Responsive images** — add `srcset` and `<picture>` elements for different screen sizes
-- [ ] **Favicon fallback** — add `.ico` fallback for browsers that don't support WebP favicons
-- [ ] **Blog syntax highlighting** — add `rehype-highlight` for colored code blocks in posts
-- [ ] **Blog search/filter** — filter posts by tag on the blog listing page

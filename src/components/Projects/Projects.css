@@ -83,8 +83,7 @@
 
 .project-card-right-header span {
     font-size: 0.95rem;
-    color: var(--text-color);
-    opacity: 0.6;
+    color: var(--secondary-color);
     white-space: nowrap;
 }
 
@@ -104,6 +103,11 @@
     color: var(--secondary-color);
     font-style: italic;
     font-size: 0.9rem;
+}
+
+.dark-theme .project-card-right-header span,
+.dark-theme .project-card h4 {
+    color: #3d8ab0;
 }
 
 /* Tech stack tags */
