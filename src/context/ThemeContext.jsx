@@ -9,12 +9,16 @@ export const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+
     if (isDarkMode) {
       document.documentElement.classList.add('dark-theme');
       localStorage.setItem('theme', 'dark');
+      if (meta) meta.setAttribute('content', '#1a1a1a');
     } else {
       document.documentElement.classList.remove('dark-theme');
       localStorage.setItem('theme', 'light');
+      if (meta) meta.setAttribute('content', '#08415c');
     }
   }, [isDarkMode]);
 
@@ -35,4 +39,4 @@ export const useTheme = () => {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-}; 
+};

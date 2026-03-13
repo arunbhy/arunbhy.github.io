@@ -1,18 +1,19 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ButtonLight from '../ButtonLight/ButtonLight';
+import DataFlow from '../DataFlow/DataFlow';
 import "./Home.css";
 
 const Home = () => {
   return (
-    <div id="home" className='home'>
+    <section id="home" className='home'>
+      <DataFlow />
       <h1 className="slideIn">Hello Everyone! My name is <span>Arunbh Yashaswi.</span></h1>
       <div className='type-animation slideIn'>
         <TypeAnimation
           sequence={[
             'I am a Data Enthusiast.',
             1000,
-            
             'I am a Data Scientist.',
             1000,
             'I am an Agentic AI Developer.',
@@ -24,14 +25,14 @@ const Home = () => {
           ]}
           wrapper="div"
           speed={10}
-          style={{ fontSize: '4rem', display: 'inline-block' }}
+          className="type-animation-text"
           repeat={Infinity}
         />
       </div>
       <div className='know-more slideInDelayed'>
         <a href="#about"><ButtonLight text="Know More" /></a>
       </div>
-    </div>
+    </section>
   );
 };
 

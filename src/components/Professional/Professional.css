@@ -1,108 +1,76 @@
-@keyframes WorkSlideLeft {
-    from {
-        transform: translateX(-5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes WorkSlideRight {
-    from {
-        transform: translateX(5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes WorkTitleSlideUp {
-    from {
-        transform: translateY(-5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.slide-in-left {
-    animation: WorkSlideLeft 1s forwards;
-}
-
-.slide-in-right {
-    animation: WorkSlideRight 1s forwards;
-}
-
-.fade-out {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-}
-
 .professional {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 3% 5% 10% 5%;
+    padding: 5rem 5% 4rem;
     background-color: var(--background-color);
+    box-sizing: border-box;
 }
 
 .professional h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 6%;
+    margin-bottom: 3rem;
     text-align: center;
     color: var(--primary-color);
-    animation: WorkTitleSlideUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.professional h1.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .work-card {
     position: relative;
     width: 75%;
-    flex: 1 1 45%;
     margin: 1rem;
     padding: 2rem;
     border-radius: 0.5rem;
     box-sizing: border-box;
     background-color: var(--card-bg) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.5s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
     opacity: 0;
+    transform: translateX(-30px);
+}
+
+.work-card.odd-card {
+    transform: translateX(30px);
+}
+
+.work-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .work-card-content {
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
 .work-image {
-    width: 10rem;
-    height: 10rem;
-    margin-right: 2rem;
-    border-radius: 2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1.5rem;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .work-details {
     flex-grow: 1;
+    min-width: 0;
 }
 
 .work-card h4 {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.7;
 }
 
 .work-card h5 {
@@ -111,22 +79,31 @@ html {
 
 .work-card p {
     margin: 0.5rem 0;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .work-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.work-card.animate-in:hover {
+    transform: translateY(-4px);
 }
 
 .work-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .work-header span {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    white-space: nowrap;
 }
 
 .work-header h3 {
@@ -148,17 +125,58 @@ html {
 }
 
 @media (max-width: 768px) {
-    .work-card {
-        width: 90%;
+    .professional {
+        padding: 4rem 1rem 3rem;
     }
-    
+
+    .professional h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .work-card {
+        width: 100%;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+        transform: translateY(30px);
+    }
+
+    .work-card.odd-card {
+        transform: translateY(30px);
+    }
+
+    .work-card.animate-in {
+        transform: translateY(0);
+    }
+
     .work-card-content {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
-    
+
     .work-image {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1rem;
+    }
+
+    .work-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .work-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .work-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .work-card p {
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
     }
 }

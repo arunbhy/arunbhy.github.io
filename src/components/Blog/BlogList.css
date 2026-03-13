@@ -1,0 +1,190 @@
+.blog-list-page {
+    min-height: 100vh;
+    padding: 7rem 5% 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.blog-list-header {
+    margin-bottom: 3rem;
+}
+
+.blog-list-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.blog-list-header p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+/* Tag filter bar */
+.blog-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-filter-tag {
+    font-size: 0.75rem;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blog-filter-tag:hover {
+    background: rgba(var(--primary-color-rgb), 0.08);
+    color: var(--primary-color);
+}
+
+.blog-filter-tag.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+/* Post cards */
+.blog-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.blog-list-card {
+    display: block;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.blog-list-card:first-child {
+    border-top: 1px solid var(--border-color);
+}
+
+.blog-list-card:hover {
+    background: rgba(var(--primary-color-rgb), 0.03);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0.5rem;
+}
+
+.blog-list-card article {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-list-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.blog-list-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.blog-list-tag {
+    font-size: 0.7rem;
+    font-family: "Courier New", monospace;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    background: rgba(var(--primary-color-rgb), 0.08);
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.blog-list-read-time {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    white-space: nowrap;
+}
+
+.blog-list-card h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin: 0 0 0.5rem;
+    line-height: 1.35;
+    transition: color 0.2s ease;
+}
+
+.blog-list-card:hover h2 {
+    color: var(--primary-color);
+}
+
+.blog-list-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin: 0 0 0.75rem;
+}
+
+.blog-list-date {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.4;
+}
+
+.blog-list-empty {
+    text-align: center;
+    padding: 4rem 0;
+    opacity: 0.5;
+}
+
+/* Dark theme */
+.dark-theme .blog-list-card:hover {
+    background: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.dark-theme .blog-list-tag {
+    background: rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .blog-list-page {
+        padding: 6rem 1.25rem 3rem;
+    }
+
+    .blog-list-header h1 {
+        font-size: 2rem;
+    }
+
+    .blog-list-header p {
+        font-size: 0.95rem;
+    }
+
+    .blog-list-card h2 {
+        font-size: 1.15rem;
+    }
+
+    .blog-list-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}

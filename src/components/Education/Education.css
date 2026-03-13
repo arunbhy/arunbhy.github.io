@@ -1,15 +1,27 @@
+@keyframes TitleSlideUp {
+    from {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
 .education {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 3% 5% 10% 5%;
+    padding: 5rem 5% 4rem;
+    box-sizing: border-box;
 }
 
 .education h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin: 0 0 3%;
+    margin: 0 0 3rem;
     text-align: center;
     opacity: 0;
     color: var(--primary-color);
@@ -20,40 +32,45 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .degree {
     position: relative;
     flex: 1 1 45%;
-    margin: 1rem;
+    max-width: 48%;
     padding: 2rem;
     border-radius: 0.5rem;
     box-sizing: border-box;
     background-color: var(--card-bg);
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
-    
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
     text-align: left;
 }
 
+.degree:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 .degree-img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2.5rem;
-    border-radius: 40%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    border-radius: 25%;
     object-fit: cover;
 }
 
 .degree h2 {
     font-weight: 500;
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .degree p {
@@ -65,32 +82,30 @@
     justify-content: space-between;
     align-items: baseline;
     width: 100%;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.degree-date {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.6;
 }
 
 .coursework {
     width: 100%;
+    margin-top: 0.5rem;
 }
 
 .coursework-item {
-    padding: 1rem;
-    border: 1px solid #dee2e6;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    background: white;
-}
-
-.coursework-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
+    background: var(--card-bg);
+    color: var(--text-color);
 }
 
 .coursework-item:hover {
@@ -103,62 +118,57 @@
     color: transparent;
 }
 
-.coursework-item:hover::before {
-    opacity: 0;
-}
-
 .button-light-container {
     margin-bottom: 1rem;
     cursor: pointer;
 }
 
-@keyframes TitleSlideUp {
-    from {
-        transform: translateY(5%);
-        opacity: 0;
+@media (max-width: 768px) {
+    .education {
+        padding: 4rem 1rem 3rem;
     }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
+
+    .education h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .education-card-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .degree {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 1.5rem;
+    }
+
+    .degree-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .degree h2 {
+        font-size: 1.2rem;
+    }
+
+    .degree-img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
     }
 }
 
-@keyframes CardSlideRight {
-    from {
-        transform: translateX(5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes CardSlideLeft {
-    from {
-        transform: translateX(-5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-/* Dark mode styles */
 .dark-theme .degree {
     background-color: var(--card-bg);
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dark-theme .coursework-item {
     background-color: var(--card-bg);
     color: var(--text-color);
     border-color: var(--border-color);
-}
-
-.dark-theme .coursework-item::before {
-    background: linear-gradient(45deg, var(--primary-color), var(--link-hover-color));
 }
 
 .dark-theme .coursework-item:hover {

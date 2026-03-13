@@ -6,97 +6,27 @@ html {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    scroll-behavior: smooth;
 }
 
-/* Add these styles after your existing code */
-
-/* Subtle gradient background animation */
 body {
-    background: linear-gradient(-45deg, var(--background-color), var(--card-bg), var(--navbar-bg), var(--background-color));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Subtle floating particles */
-.particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.particle {
-    position: absolute;
-    background: var(--text-color);
-    opacity: 0.05;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float 20s infinite linear;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-100vh) translateX(100px);
-        opacity: 0;
-    }
-}
-
-/* Add subtle hover effect to cards */
-.work-card, .project-card, .skill-card, .degree {
+/* Card hover effects */
+.project-card, .skill-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: var(--card-bg);
-    backdrop-filter: blur(5px);
 }
 
-.work-card:hover, .project-card:hover, .skill-card:hover, .degree:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Add subtle section transitions */
-.about, .professional, .skills, .projects, .education, .contact {
+/* Sections — transparent background so body shows through seamlessly */
+.about, .skills, .projects, .contact, .timeline-section, .achievements {
     position: relative;
     overflow: hidden;
 }
 
-.about::before, .professional::before, .skills::before, 
-.projects::before, .education::before, .contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(var(--primary-color-rgb), 0.03) 0%, 
-        rgba(var(--secondary-color-rgb), 0.03) 100%);
-    z-index: -1;
-    transition: opacity 0.3s ease;
-}
-
-/* Add subtle scroll reveal animation */
+/* Scroll reveal */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -108,136 +38,55 @@ body {
     transform: translateY(0);
 }
 
-/* Add CSS variables for RGB values of colors */
+/* RGB variables */
 :root {
-    --primary-color-rgb: 8, 65, 92;  /* #08415c */
-    --secondary-color-rgb: 204, 41, 54;  /* #cc2936 */
+    --primary-color-rgb: 8, 65, 92;
+    --secondary-color-rgb: 204, 41, 54;
 }
 
 .dark-theme {
-    --primary-color-rgb: 204, 41, 54;  /* #cc2936 */
-    --secondary-color-rgb: 8, 65, 92;  /* #08415c - reversed */
+    --primary-color-rgb: 204, 41, 54;
+    --secondary-color-rgb: 8, 65, 92;
 }
 
-/* Update gradient background for dark theme */
-.dark-theme body {
-    background: linear-gradient(-45deg, 
-        var(--background-color),
-        var(--card-bg),
-        rgba(var(--primary-color-rgb), 0.1),
-        var(--background-color)
-    );
-    background-size: 400% 400%;
-}
-
-/* Update particle colors for dark theme */
-.dark-theme .particle {
-    background: var(--primary-color);
-    opacity: 0.03;
-}
-
-/* Update card hover effects for dark theme */
-.dark-theme .work-card:hover, 
-.dark-theme .project-card:hover, 
-.dark-theme .skill-card:hover, 
-.dark-theme .degree:hover {
+/* Dark theme overrides */
+.dark-theme .project-card:hover,
+.dark-theme .skill-card:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
                 0 0 15px rgba(var(--primary-color-rgb), 0.2);
 }
 
-/* Update section gradients for dark theme */
-.dark-theme .about::before, 
-.dark-theme .professional::before, 
-.dark-theme .skills::before, 
-.dark-theme .projects::before, 
-.dark-theme .education::before, 
-.dark-theme .contact::before {
-    background: linear-gradient(45deg, 
-        rgba(var(--primary-color-rgb), 0.05) 0%,
-        rgba(var(--secondary-color-rgb), 0.05) 100%
-    );
-}
-
-/* Update card borders for dark theme */
-.dark-theme .work-card, 
-.dark-theme .project-card, 
-.dark-theme .skill-card, 
-.dark-theme .degree {
+.dark-theme .project-card,
+.dark-theme .skill-card {
     border: 1px solid rgba(var(--primary-color-rgb), 0.1);
-    background: rgba(34, 34, 34, 0.9);
+    background: var(--card-bg);
 }
 
-/* Update button hover effects for dark theme */
 .dark-theme .button-light:hover {
-    color: #ffffff;  /* Red on hover */
+    color: #ffffff;
 }
 
 .dark-theme .button-dark:hover {
-    color: #ffffff;  /* Red on hover */
+    color: #ffffff;
 }
 
-/* Update navigation for dark theme */
 .dark-theme .navbar {
-    background-color: var(--navbar-bg) !important;
+    background-color: var(--navbar-bg);
     border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.1);
 }
 
 .dark-theme .nav-link {
-    color: var(--text-color) !important;
+    color: var(--text-color);
 }
 
 .dark-theme .nav-link:hover {
-    color: var(--link-hover-color) !important;
+    color: var(--link-hover-color);
 }
 
-/* Update scrollbar for dark theme */
-.dark-theme ::-webkit-scrollbar {
-    width: 10px;
-}
-
-.dark-theme ::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-.dark-theme ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-.dark-theme ::-webkit-scrollbar-thumb:hover {
-    background: var(--link-hover-color);
-}
-
-/* Update selection color for dark theme */
-.dark-theme ::selection {
-    background: rgba(var(--primary-color-rgb), 0.3);
-    color: var(--heading-color);
-}
-
-/* Update focus outline for dark theme */
-.dark-theme :focus {
-    outline-color: var(--primary-color);
-}
-
-/* Update link colors for dark theme */
 .dark-theme a {
     color: var(--link-color);
 }
 
 .dark-theme a:hover {
     color: var(--link-hover-color);
-}
-
-/* Update form elements for dark theme */
-.dark-theme input,
-.dark-theme textarea {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border-color: var(--border-color);
-}
-
-.dark-theme input:focus,
-.dark-theme textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
 }

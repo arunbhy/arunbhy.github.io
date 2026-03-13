@@ -1,71 +1,55 @@
-@keyframes ProjectSlideLeft {
-    from {
-        transform: translateX(-5%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes ProjectSlideRight {
-    from {
-        transform: translateX(2%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes ProjectSlideUp {
-    from {
-        transform: translateY(-2%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
 .projects {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 3% 5% 10% 5%;
+    padding: 5rem 5% 4rem;
+    box-sizing: border-box;
 }
 
 .projects h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 6%;
+    margin-bottom: 3rem;
     text-align: center;
-    opacity: 0;
     color: var(--primary-color);
-    animation: ProjectSlideUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.projects h1.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card {
     display: flex;
-    width: 100%;
+    width: 85%;
     padding: 2rem;
-    margin: 2rem;
+    margin: 1rem 0;
     gap: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-card.animate-in:hover {
+    transform: translateY(-4px);
 }
 
 .project-card-left {
@@ -74,9 +58,8 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
-    animation: ProjectSlideLeft 1s ease-out forwards;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .project-card-left img {
@@ -86,54 +69,121 @@ html {
 }
 
 .project-card-right {
-    flex: 3;
-    max-width: 50%;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    animation: ProjectSlideRight 1s ease-out forwards;
+    flex: 2;
+    padding: 1rem;
 }
 
 .project-card-right-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-card-right-header span {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    white-space: nowrap;
 }
 
 .project-card h3 {
     font-weight: 500;
-    font-size: x-large;
+    font-size: 1.4rem;
 }
 
 .project-card p {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.project-card h4{
+.project-card h4 {
     color: var(--secondary-color);
     font-style: italic;
-    font-size: medium;
+    font-size: 0.9rem;
+}
+
+.dark-theme .project-card-right-header span,
+.dark-theme .project-card h4 {
+    color: #3d8ab0;
+}
+
+/* Tech stack tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    color: var(--primary-color);
+    background: rgba(var(--primary-color-rgb), 0.08);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+}
+
+.dark-theme .project-tag {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-color: rgba(var(--primary-color-rgb), 0.3);
+}
+
+/* Project action links */
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.toggle-button {
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
+    .projects {
+        padding: 4rem 1rem 3rem;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .project-card {
         flex-direction: column;
-        padding: 1rem;
-        margin: 1rem 0;
+        width: 100%;
+        padding: 1.2rem;
+        margin: 0.5rem 0;
+        gap: 1rem;
     }
-    
+
     .project-card-right {
-        max-width: 100%;
-        padding: 1rem 0;
+        padding: 0;
     }
-    
+
+    .project-card-right-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
     .project-card-left img {
         width: 100%;
         height: auto;

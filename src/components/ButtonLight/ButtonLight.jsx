@@ -1,12 +1,19 @@
 import React from "react";
 import "./ButtonLight.css";
 
-const ButtonLight = ( { text }) => {
+const ButtonLight = ({ text, link }) => {
+    if (link) {
+        return (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="button-light">
+                {text}
+            </a>
+        );
+    }
     return (
-        <div className="button-light">
-            { text }
-        </div>
-    )
-}
+        <button type="button" className="button-light">
+            {text}
+        </button>
+    );
+};
 
 export default ButtonLight;

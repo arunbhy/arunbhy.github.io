@@ -1,0 +1,102 @@
+.section-divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    overflow: hidden;
+}
+
+.section-divider-svg {
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+}
+
+.divider-axis {
+    stroke: var(--text-color);
+    stroke-width: 0.5;
+    opacity: 0.1;
+}
+
+.divider-point {
+    animation: pointAppear 0.6s ease-out both;
+}
+
+.divider-point.cluster-a {
+    fill: var(--primary-color);
+    opacity: 0.25;
+}
+
+.divider-point.cluster-b {
+    fill: var(--secondary-color);
+    opacity: 0.25;
+}
+
+.divider-boundary {
+    stroke: var(--text-color);
+    stroke-width: 0.8;
+    stroke-dasharray: 4 3;
+    opacity: 0.12;
+}
+
+.divider-curve {
+    stroke-width: 1.5;
+    opacity: 0.2;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawCurve 3s ease-out forwards;
+}
+
+.curve-train {
+    stroke: var(--primary-color);
+}
+
+.curve-val {
+    stroke: var(--secondary-color);
+    stroke-dasharray: 4 3;
+    animation-delay: 0.5s;
+}
+
+.divider-label {
+    font-family: 'Courier New', monospace;
+    font-size: 6px;
+    fill: var(--primary-color);
+    opacity: 0.25;
+}
+
+.divider-label.label-val {
+    fill: var(--secondary-color);
+}
+
+.divider-cell {
+    fill: var(--primary-color);
+    animation: cellFade 0.5s ease-out both;
+}
+
+@keyframes pointAppear {
+    from {
+        r: 0;
+        opacity: 0;
+    }
+    to {
+        opacity: 0.25;
+    }
+}
+
+@keyframes drawCurve {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes cellFade {
+    from {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-divider-svg {
+        width: 85%;
+    }
+}

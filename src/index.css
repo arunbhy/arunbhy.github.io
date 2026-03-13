@@ -1,221 +1,201 @@
 :root {
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --primary-color: #08415c;
-  --secondary-color: #cc2936;
-  --border-color: #dee2e6;
-  --heading-color: #333333;
-  --link-color: #08415c;
-  --link-hover-color: #0a5275;
-  --card-bg: #ffffff;
-  --navbar-bg: #f8f9fa;
-  --primary-color-rgb: 8, 65, 92;  /* #08415c */
-  --secondary-color-rgb: 204, 41, 54;  /* #cc2936 */
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #08415c;
+    --secondary-color: #cc2936;
+    --border-color: #dee2e6;
+    --heading-color: #333333;
+    --link-color: #08415c;
+    --link-hover-color: #0a5275;
+    --card-bg: #ffffff;
+    --navbar-bg: #f8f9fa;
+    --primary-color-rgb: 8, 65, 92;
+    --secondary-color-rgb: 204, 41, 54;
 }
 
 .dark-theme {
-  --background-color: #1a1a1a;
-  --text-color: #e0e0e0;
-  --primary-color: #cc2936;
-  --secondary-color: #08415c;
-  --border-color: #495057;
-  --heading-color: #ffffff;
-  --link-color: #cc2936;
-  --link-hover-color: #ff4444;
-  --card-bg: #2d2d2d;
-  --navbar-bg: #2d2d2d;
-  --primary-color-rgb: 204, 41, 54;  /* #cc2936 */
-  --secondary-color-rgb: 8, 65, 92;  /* #08415c */
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #cc2936;
+    --secondary-color: #08415c;
+    --border-color: #495057;
+    --heading-color: #ffffff;
+    --link-color: #cc2936;
+    --link-hover-color: #ff4444;
+    --card-bg: #2d2d2d;
+    --navbar-bg: #2d2d2d;
+    --primary-color-rgb: 204, 41, 54;
+    --secondary-color-rgb: 8, 65, 92;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
+    color: var(--heading-color);
 }
 
 a {
-  color: var(--link-color);
-  transition: color 0.3s ease;
+    color: var(--link-color);
+    transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+    color: var(--link-hover-color);
 }
 
-/* Components */
+p {
+    color: var(--text-color);
+}
+
+/* Skip to content link */
+.skip-to-content {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    color: white;
+}
+
+/* Focus-visible styles */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Scrollbar — both themes */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--link-hover-color);
+}
+
+::selection {
+    background: rgba(var(--primary-color-rgb), 0.3);
+    color: var(--heading-color);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark theme overrides for Bootstrap components */
 .dark-theme .card {
-  background-color: var(--card-bg);
-  border-color: var(--border-color);
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
 }
 
 .dark-theme .navbar {
-  background-color: var(--navbar-bg) !important;
+    background-color: var(--navbar-bg);
 }
 
 .dark-theme .nav-link {
-  color: var(--text-color) !important;
+    color: var(--text-color);
 }
 
 .dark-theme .nav-link:hover {
-  color: var(--link-hover-color) !important;
-}
-
-.dark-theme .btn-outline-primary {
-  color: var(--text-color);
-  border-color: var(--text-color);
-}
-
-.dark-theme .btn-outline-primary:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-/* Additional dark theme styles */
-.dark-theme p {
-  color: var(--text-color);
+    color: var(--link-hover-color);
 }
 
 .dark-theme .text-muted {
-  color: var(--secondary-color) !important;
+    color: var(--secondary-color);
 }
 
-.dark-theme .bg-light {
-  background-color: var(--card-bg) !important;
-}
-
+.dark-theme .bg-light,
 .dark-theme .bg-white {
-  background-color: var(--card-bg) !important;
+    background-color: var(--card-bg);
 }
 
-/* Form elements */
-.dark-theme input,
-.dark-theme textarea {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border-color: var(--border-color);
-}
-
-.dark-theme input:focus,
-.dark-theme textarea:focus {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border-color: var(--primary-color);
-}
-
-/* Table styles */
-.dark-theme table {
-  color: var(--text-color);
-}
-
-.dark-theme .table {
-  color: var(--text-color);
-}
-
-.dark-theme .table td,
-.dark-theme .table th {
-  border-color: var(--border-color);
-}
-
-/* Career and Education sections - dark theme text colors */
-/* .dark-theme #professional h1,
-.dark-theme #education h1,
-.dark-theme #skills h1 {
-  color: #ffffff !important;
-} */
-
-.dark-theme #professional h3,
-.dark-theme #professional h4,
-.dark-theme #professional h5,
-.dark-theme #professional p,
-.dark-theme #professional span,
-.dark-theme #education h2,
-.dark-theme #education h5,
-.dark-theme #education p,
-.dark-theme #education span,
-.dark-theme .degree-header h2,
-.dark-theme .degree-date,
-.dark-theme .coursework-item,
+/* Dark theme section text */
+.dark-theme #timeline h3,
+.dark-theme #timeline p,
 .dark-theme #skills h5,
 .dark-theme #skills li {
-  color: #e0e0e0 !important;
+    color: #e0e0e0;
 }
 
-/* Maintain background colors for these sections */
-.dark-theme #professional,
-.dark-theme #education,
-.dark-theme #skills {
-  background-color: var(--background-color);
+.dark-theme .skill-card,
+.dark-theme .timeline-card {
+    background-color: var(--card-bg);
 }
 
-.dark-theme .work-card,
-.dark-theme .degree,
-.dark-theme .skill-card {
-  background-color: var(--card-bg);
+.dark-theme #skills .button-light-container button,
+.dark-theme #skills .show-button button {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
-/* Skills section button styles */
-/* .dark-theme #skills .button-light-container button {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
-  color: white !important;
+.dark-theme #skills .button-light-container button:hover,
+.dark-theme #skills .show-button button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
-
-.dark-theme #skills .button-light-container button:hover {
-  background-color: #bb2d3b !important;
-  border-color: #bb2d3b !important;
-} */
-
-/* Skills section button styles */
-/* .dark-theme #skills .button-light-container button {
-  background-color: #cc2936 !important;
-  border-color: #cc2936 !important;
-  color: white !important;
-}
-
-.dark-theme #skills .button-light-container button:hover {
-  background-color: #a8232e !important;  /* A slightly darker shade of the red */
-  /* border-color: #a8232e !important;
-} */ 
-
-
-/* Skills section button styles */
-.dark-theme #skills .button-light-container button {
-  background-color: transparent !important;
-  border-color: var(--primary-color) !important;
-  color: var(--primary-color) !important;
-}
-
-.dark-theme #skills .button-light-container button:hover {
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-  color: white !important;
-}
-/* About section dark theme styles */
-/* .dark-theme .about {
-  background: linear-gradient(to right, #1a1a1a, #2d2d2d) !important;
-} */
 
 .dark-theme .about-title {
-  color: #ffffff !important;
+    color: #ffffff;
 }
 
 .dark-theme .about-right p {
-  color: #e0e0e0 !important;
+    color: #e0e0e0;
 }
 
 .dark-theme .about .button-dark-container button {
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-  color: white !important;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
 .dark-theme .about .button-dark-container button:hover {
-  background-color: var(--link-hover-color) !important;
-  border-color: var(--link-hover-color) !important;
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
 }
