@@ -11,6 +11,7 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import BackgroundEffects from "./components/BackgroundEffects/BackgroundEffects";
 import Achievements from "./components/Achievements/Achievements";
+import Timeline from "./components/Timeline/Timeline";
 import SectionDivider from "./components/SectionDivider/SectionDivider";
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -24,6 +25,8 @@ const App = () => {
       <Home />
       <About />
       <SectionDivider type="scatter" />
+      <Timeline />
+      <SectionDivider type="loss" />
       <Professional />
       <SectionDivider type="loss" />
       <Skills />

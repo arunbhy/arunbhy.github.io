@@ -105,13 +105,15 @@ a:hover {
 
 .dark-theme #professional,
 .dark-theme #education,
-.dark-theme #skills {
+.dark-theme #skills,
+.dark-theme #timeline {
     background-color: var(--background-color);
 }
 
 .dark-theme .work-card,
 .dark-theme .degree,
-.dark-theme .skill-card {
+.dark-theme .skill-card,
+.dark-theme .timeline-card {
     background-color: var(--card-bg);
 }
 

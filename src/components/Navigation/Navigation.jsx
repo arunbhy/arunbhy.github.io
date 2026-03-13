@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import "./Navigation.css";
 
-const sections = ['home', 'about', 'professional', 'skills', 'projects', 'education', 'achievements', 'contact'];
+const sections = ['home', 'about', 'timeline', 'professional', 'skills', 'projects', 'education', 'achievements', 'contact'];
 
 const Navigation = () => {
   const [expanded, setExpanded] = useState(false);
@@ -48,7 +48,7 @@ const Navigation = () => {
                 onClick={handleNavClick}
                 className={activeSection === section ? 'nav-active' : ''}
               >
-                {section === 'professional' ? 'Career' : section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === 'professional' ? 'Career' : section === 'timeline' ? 'Journey' : section.charAt(0).toUpperCase() + section.slice(1)}
               </Nav.Link>
             ))}
           </Nav>
