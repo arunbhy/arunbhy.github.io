@@ -1,11 +1,13 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ButtonLight from '../ButtonLight/ButtonLight';
+import DataFlow from '../DataFlow/DataFlow';
 import "./Home.css";
 
 const Home = () => {
   return (
     <div id="home" className='home'>
+      <DataFlow />
       <h1 className="slideIn">Hello Everyone! My name is <span>Arunbh Yashaswi.</span></h1>
       <div className='type-animation slideIn'>
         <TypeAnimation

@@ -1,49 +1,3 @@
-@keyframes WorkSlideLeft {
-    from {
-        transform: translateX(-5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes WorkSlideRight {
-    from {
-        transform: translateX(5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes WorkTitleSlideUp {
-    from {
-        transform: translateY(-5%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-.slide-in-left {
-    animation: WorkSlideLeft 1s forwards;
-}
-
-.slide-in-right {
-    animation: WorkSlideRight 1s forwards;
-}
-
-.fade-out {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-}
-
 .professional {
     display: flex;
     flex-direction: column;
@@ -61,7 +15,14 @@
     margin-bottom: 3rem;
     text-align: center;
     color: var(--primary-color);
-    animation: WorkTitleSlideUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.professional h1.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .work-card {
@@ -73,8 +34,18 @@
     box-sizing: border-box;
     background-color: var(--card-bg) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.5s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
     opacity: 0;
+    transform: translateX(-30px);
+}
+
+.work-card.odd-card {
+    transform: translateX(30px);
+}
+
+.work-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .work-card-content {
@@ -114,6 +85,10 @@
 .work-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.work-card.animate-in:hover {
+    transform: translateY(-4px);
 }
 
 .work-header {
@@ -163,6 +138,15 @@
         width: 100%;
         padding: 1.5rem;
         margin: 0.5rem 0;
+        transform: translateY(30px);
+    }
+
+    .work-card.odd-card {
+        transform: translateY(30px);
+    }
+
+    .work-card.animate-in {
+        transform: translateY(0);
     }
 
     .work-card-content {

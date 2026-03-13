@@ -24,6 +24,9 @@ const Footer = () => {
                     <a rel="noreferrer" href="https://www.kaggle.com/arunbhy" target="_blank" aria-label="Kaggle">
                         <i className="fa-brands fa-kaggle"></i>
                     </a>
+                    <a rel="noreferrer" href="https://scholar.google.com/citations?user=VijCCcEAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+                        <i className="fa-brands fa-google-scholar"></i>
+                    </a>
                     <a rel="noreferrer" href="https://www.instagram.com/arunbhyashaswi/" target="_blank" aria-label="Instagram">
                         <i className="fa-brands fa-instagram"></i>
                     </a>
