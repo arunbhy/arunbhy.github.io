@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import "./Navigation.css";
 
-const sections = ['home', 'about', 'timeline', 'skills', 'projects', 'achievements', 'contact'];
+const sections = ['home', 'about', 'timeline', 'skills', 'projects', 'achievements', 'blog', 'contact'];
 
 const Navigation = () => {
   const [expanded, setExpanded] = useState(false);
@@ -32,7 +32,7 @@ const Navigation = () => {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary navbar-fixed" fixed="top" expanded={expanded} onToggle={setExpanded}>
+    <Navbar expand="lg" className="navbar-fixed" fixed="top" expanded={expanded} onToggle={setExpanded}>
       <Container fluid>
         <div className="d-flex align-items-center">
           <Navbar.Brand href="#home"><img src="images/logo.webp" alt="Logo" className="navbar-logo" /></Navbar.Brand>
@@ -48,7 +48,7 @@ const Navigation = () => {
                 onClick={handleNavClick}
                 className={activeSection === section ? 'nav-active' : ''}
               >
-                {section === 'timeline' ? 'Journey' : section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === 'timeline' ? 'Journey' : section === 'blog' ? 'Writing' : section.charAt(0).toUpperCase() + section.slice(1)}
               </Nav.Link>
             ))}
           </Nav>

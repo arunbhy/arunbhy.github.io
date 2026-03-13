@@ -10,6 +10,7 @@ import Projects from "./components/Projects/Projects";
 import BackgroundEffects from "./components/BackgroundEffects/BackgroundEffects";
 import Achievements from "./components/Achievements/Achievements";
 import Timeline from "./components/Timeline/Timeline";
+import Blog from "./components/Blog/Blog";
 import SectionDivider from "./components/SectionDivider/SectionDivider";
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,22 +18,25 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <>
+      <a href="#about" className="skip-to-content">Skip to content</a>
       <BackgroundEffects />
       <Navigation />
-      <Home />
-      <About />
-      <SectionDivider type="scatter" />
-      <Timeline />
-      <SectionDivider type="loss" />
-      <Skills />
-      <SectionDivider type="grid" />
-      <Projects />
-      <SectionDivider type="scatter" />
-      <Achievements />
-      <Contact />
+      <main>
+        <Home />
+        <About />
+        <SectionDivider type="scatter" />
+        <Timeline />
+        <SectionDivider type="loss" />
+        <Skills />
+        <SectionDivider type="grid" />
+        <Projects />
+        <Achievements />
+        <Blog />
+        <Contact />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

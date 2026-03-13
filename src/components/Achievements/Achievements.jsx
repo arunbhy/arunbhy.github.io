@@ -54,7 +54,7 @@ const Achievements = () => {
     const displayedAchievements = showAllAchievements ? achievements : achievements.slice(0, 3);
 
     return (
-        <div id="achievements" className="achievements">
+        <section id="achievements" className="achievements">
             <h1 ref={titleRef} className={titleInView ? 'animate-in' : ''}>ACHIEVEMENTS</h1>
             {displayedAchievements.map((achievement, index) => (
                 <AchievementCard key={index} achievement={achievement} index={index} />
@@ -66,7 +66,7 @@ const Achievements = () => {
                     />
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 

@@ -25,25 +25,23 @@
 - [x] Tech stack tags on project cards (Python, PyTorch, React, etc.)
 - [x] Convert images to WebP — 44.5MB → ~3.2MB (93% reduction)
 - [x] Contact form via Formspree with email fallback
+- [x] Interactive career timeline — expandable cards pulling from work + education data
+- [x] **Accessibility pass** — keyboard nav for expandable sections, `focus-visible` styles, skip-to-content link
+- [x] **Reduced motion support** — `prefers-reduced-motion` disables all animations
+- [x] **Contact form labels** — proper `<label>` elements (visually hidden), `aria-live` status region
+- [x] **Semantic HTML** — all section wrappers converted to `<section>`, `<main>`, `<footer>`
+- [x] **Loading skeleton** — branded loading state in `index.html` to prevent flash of unstyled content
+- [x] **Upgrade Vite** — v4 → v8
+- [x] **Upgrade React** — v18 → v19
+- [x] **`theme-color` meta tag** — browser chrome color updates with theme toggle
+- [x] **Font loading optimization** — `font-display=swap` on Google Fonts
+- [x] **Error boundary** — catches rendering crashes with a refresh button
+- [x] **CSS `!important` cleanup** — removed `!important` flags, fixed specificity properly
+- [x] **Scrollbar styling** — consistent scrollbar colors for both light and dark themes
 
-## High Priority
+## Needs User Action
 
-- [ ] **Accessibility pass** — keyboard navigation for expandable sections, `focus-visible` styles, skip-to-content link
-- [ ] **Reduced motion support** — respect `prefers-reduced-motion` to disable animations for users who need it
-- [ ] **Contact form labels** — add proper `<label>` elements for screen readers, `aria-live` for status messages
-- [ ] **Semantic HTML upgrade** — replace remaining `<div>` section wrappers with `<section>` and `<main>` elements
-- [ ] **Formspree endpoint** — replace `arunbh.y@gmail.com` in URL with actual Formspree form ID (`f/xabcdefg`)
-
-## Medium Priority
-
-- [ ] **Loading skeleton** — branded loading state to prevent flash of unstyled content
-- [ ] **Upgrade Vite** — v4 → v6
-- [ ] **Upgrade React** — v18 → v19
-- [ ] **`theme-color` meta tag** — set browser chrome color matching theme (light/dark)
-- [ ] **Font loading optimization** — add `font-display: swap` to prevent invisible text during font load
-- [ ] **Responsive images** — add `srcset` and `<picture>` elements for different screen sizes
-- [ ] **Error boundary** — React error boundary component to catch rendering crashes gracefully
-- [ ] **CSS `!important` cleanup** — remove `!important` flags and fix specificity properly
+- [ ] **Formspree endpoint** — replace `arunbh.y@gmail.com` in Contact.jsx with actual Formspree form ID (e.g. `https://formspree.io/f/xabcdefg`). Create a free account at formspree.io.
 
 ## Nice to Have
 
@@ -52,6 +50,5 @@
 - [ ] **Blog/writing section** — for publishing research notes or tutorials
 - [ ] **Interactive skills visualization** — radar chart or force-directed graph instead of expandable cards
 - [ ] **Performance audit** — run Lighthouse and fix flagged issues
+- [ ] **Responsive images** — add `srcset` and `<picture>` elements for different screen sizes
 - [ ] **Favicon fallback** — add `.ico` fallback for browsers that don't support WebP favicons
-- [ ] **Scrollbar styling** — match scrollbar colors for both light and dark themes
-- [ ] **`useCallback` optimization** — memoize toggle handlers in Skills, Education, Achievements

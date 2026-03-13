@@ -53,49 +53,113 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+p {
+    color: var(--text-color);
+}
+
+/* Skip to content link */
+.skip-to-content {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    color: white;
+}
+
+/* Focus-visible styles */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Scrollbar — both themes */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--link-hover-color);
+}
+
+::selection {
+    background: rgba(var(--primary-color-rgb), 0.3);
+    color: var(--heading-color);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark theme overrides for Bootstrap components */
 .dark-theme .card {
     background-color: var(--card-bg);
     border-color: var(--border-color);
 }
 
 .dark-theme .navbar {
-    background-color: var(--navbar-bg) !important;
+    background-color: var(--navbar-bg);
 }
 
 .dark-theme .nav-link {
-    color: var(--text-color) !important;
-}
-
-.dark-theme .nav-link:hover {
-    color: var(--link-hover-color) !important;
-}
-
-.dark-theme p {
     color: var(--text-color);
 }
 
+.dark-theme .nav-link:hover {
+    color: var(--link-hover-color);
+}
+
 .dark-theme .text-muted {
-    color: var(--secondary-color) !important;
+    color: var(--secondary-color);
 }
 
-.dark-theme .bg-light {
-    background-color: var(--card-bg) !important;
-}
-
+.dark-theme .bg-light,
 .dark-theme .bg-white {
-    background-color: var(--card-bg) !important;
+    background-color: var(--card-bg);
 }
 
+/* Dark theme section text */
 .dark-theme #timeline h3,
 .dark-theme #timeline p,
 .dark-theme #skills h5,
 .dark-theme #skills li {
-    color: #e0e0e0 !important;
-}
-
-.dark-theme #skills,
-.dark-theme #timeline {
-    background-color: var(--background-color);
+    color: #e0e0e0;
 }
 
 .dark-theme .skill-card,
@@ -103,33 +167,35 @@ a:hover {
     background-color: var(--card-bg);
 }
 
-.dark-theme #skills .button-light-container button {
-    background-color: transparent !important;
-    border-color: var(--primary-color) !important;
-    color: var(--primary-color) !important;
+.dark-theme #skills .button-light-container button,
+.dark-theme #skills .show-button button {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
-.dark-theme #skills .button-light-container button:hover {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: white !important;
+.dark-theme #skills .button-light-container button:hover,
+.dark-theme #skills .show-button button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
 .dark-theme .about-title {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .dark-theme .about-right p {
-    color: #e0e0e0 !important;
+    color: #e0e0e0;
 }
 
 .dark-theme .about .button-dark-container button {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: white !important;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
 .dark-theme .about .button-dark-container button:hover {
-    background-color: var(--link-hover-color) !important;
-    border-color: var(--link-hover-color) !important;
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
 }

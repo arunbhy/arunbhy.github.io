@@ -34,45 +34,70 @@ const Contact = () => {
         }
     };
 
+    const statusText = status === 'sent' ? 'Message sent successfully!' : status === 'error' ? 'Failed to send. Please try again.' : '';
+
     return (
-        <div id="contact" className="contact">
+        <section id="contact" className="contact">
             <h1>CONTACT</h1>
             <div className="contact-content">
                 <h2>Let's work together!</h2>
                 <form className="contact-form" onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    <textarea
-                        name="message"
-                        placeholder="Your Message"
-                        rows="4"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    />
+                    <div className="form-group">
+                        <label htmlFor="contact-name">Name</label>
+                        <input
+                            id="contact-name"
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="contact-email">Email</label>
+                        <input
+                            id="contact-email"
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="contact-message">Message</label>
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            placeholder="Your Message"
+                            rows="4"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <button type="submit" className="contact-submit" disabled={status === 'sending'}>
                         {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : status === 'error' ? 'Failed - Try Again' : 'Send Message'}
                     </button>
+                    <p className="contact-status" aria-live="polite" role="status">
+                        {statusText}
+                    </p>
                 </form>
                 <p className="contact-alt">
-                    Or email me directly at <span className="contact-email" onClick={() => { navigator.clipboard.writeText('arunbh.y@gmail.com'); }}>arunbh.y@gmail.com</span>
+                    Or email me directly at{' '}
+                    <button
+                        type="button"
+                        className="contact-email"
+                        onClick={() => navigator.clipboard.writeText('arunbh.y@gmail.com')}
+                        aria-label="Copy email address arunbh.y@gmail.com to clipboard"
+                    >
+                        arunbh.y@gmail.com
+                    </button>
                 </p>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -6,7 +6,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="back-to-top-container">
                 <a rel="noreferrer" href="#home" className="back-to-top">
                     <i className="fa-solid fa-angle-up fa-3x" aria-hidden="true"></i>
@@ -37,7 +37,7 @@ const Footer = () => {
                 &copy; {year} - Created and maintained by <a rel="noreferrer" href="/">Arunbh Yashaswi</a>
             </p>
 
-        </div>
+        </footer>
     );
 }
 

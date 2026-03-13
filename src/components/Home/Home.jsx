@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div id="home" className='home'>
+    <section id="home" className='home'>
       <DataFlow />
       <h1 className="slideIn">Hello Everyone! My name is <span>Arunbh Yashaswi.</span></h1>
       <div className='type-animation slideIn'>
@@ -32,7 +32,7 @@ const Home = () => {
       <div className='know-more slideInDelayed'>
         <a href="#about"><ButtonLight text="Know More" /></a>
       </div>
-    </div>
+    </section>
   );
 };
 

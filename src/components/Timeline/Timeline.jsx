@@ -45,6 +45,10 @@ const TimelineItem = ({ item, index, expanded, onToggle }) => {
             <div
                 className={`timeline-card timeline-card--${item.type} ${expanded ? "timeline-card--expanded" : ""}`}
                 onClick={onToggle}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
+                role="button"
+                tabIndex={0}
+                aria-expanded={expanded}
             >
                 <div className="timeline-card-header">
                     <div className="timeline-card-header-text">
@@ -133,7 +137,7 @@ const Timeline = () => {
     };
 
     return (
-        <div id="timeline" className="timeline-section">
+        <section id="timeline" className="timeline-section">
             <h1 ref={titleRef} className={titleInView ? "animate-in" : ""}>
                 MY JOURNEY
             </h1>
@@ -149,7 +153,7 @@ const Timeline = () => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

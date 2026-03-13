@@ -21,7 +21,14 @@ const SkillCard = ({ skill, index, visible, onToggle }) => {
                     ))}
                 </ul>
             )}
-            <div className="show-button" onClick={onToggle}>
+            <div
+                className="show-button"
+                onClick={onToggle}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
+                role="button"
+                tabIndex={0}
+                aria-expanded={visible}
+            >
                 <ButtonLight text={visible ? "Hide Skills" : "Show Skills"} />
             </div>
         </div>
@@ -37,7 +44,7 @@ const Skills = () => {
     };
 
     return (
-        <div id="skills" className="skills">
+        <section id="skills" className="skills">
             <h1 ref={titleRef} className={titleInView ? 'animate-in' : ''}>TECHNICAL SKILLS</h1>
             <div className="skills-row">
                 {skills.map((skill, index) => (
@@ -50,7 +57,7 @@ const Skills = () => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

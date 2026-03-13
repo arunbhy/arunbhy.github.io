@@ -49,7 +49,7 @@ const Projects = () => {
     const displayedProjects = showAllProjects ? projectList : projectList.slice(0, 3);
 
     return (
-        <div id="projects" className="projects">
+        <section id="projects" className="projects">
             <h1 ref={titleRef} className={titleInView ? 'animate-in' : ''}>PROJECTS</h1>
             {displayedProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} index={index} />
@@ -59,7 +59,7 @@ const Projects = () => {
                     <ButtonLight text={showAllProjects ? "Show Less" : "Show More"} />
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 

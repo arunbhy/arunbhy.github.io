@@ -4,7 +4,7 @@ import ButtonDark from "../ButtonDark/ButtonDark";
 
 const About = () => {
     return (
-        <div id="about" className="about">
+        <section id="about" className="about">
             <div className="about-title">
                 ABOUT ME
             </div>
@@ -25,7 +25,7 @@ const About = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
