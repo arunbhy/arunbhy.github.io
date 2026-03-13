@@ -5,8 +5,6 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import Education from "./components/Education/Education";
-import Professional from "./components/Professional/Professional";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import BackgroundEffects from "./components/BackgroundEffects/BackgroundEffects";
@@ -27,14 +25,10 @@ const App = () => {
       <SectionDivider type="scatter" />
       <Timeline />
       <SectionDivider type="loss" />
-      <Professional />
-      <SectionDivider type="loss" />
       <Skills />
       <SectionDivider type="grid" />
       <Projects />
       <SectionDivider type="scatter" />
-      <Education />
-      <SectionDivider type="loss" />
       <Achievements />
       <Contact />
       <Footer />

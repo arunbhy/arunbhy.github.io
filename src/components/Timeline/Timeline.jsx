@@ -125,7 +125,7 @@ const Timeline = () => {
             sortDate: parseStartDate(e.time),
         }));
 
-        return [...workItems, ...eduItems].sort((a, b) => a.sortDate - b.sortDate);
+        return [...workItems, ...eduItems].sort((a, b) => b.sortDate - a.sortDate);
     }, []);
 
     const toggleExpand = (index) => {

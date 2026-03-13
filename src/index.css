@@ -86,32 +86,18 @@ a:hover {
     background-color: var(--card-bg) !important;
 }
 
-.dark-theme #professional h3,
-.dark-theme #professional h4,
-.dark-theme #professional h5,
-.dark-theme #professional p,
-.dark-theme #professional span,
-.dark-theme #education h2,
-.dark-theme #education h5,
-.dark-theme #education p,
-.dark-theme #education span,
-.dark-theme .degree-header h2,
-.dark-theme .degree-date,
-.dark-theme .coursework-item,
+.dark-theme #timeline h3,
+.dark-theme #timeline p,
 .dark-theme #skills h5,
 .dark-theme #skills li {
     color: #e0e0e0 !important;
 }
 
-.dark-theme #professional,
-.dark-theme #education,
 .dark-theme #skills,
 .dark-theme #timeline {
     background-color: var(--background-color);
 }
 
-.dark-theme .work-card,
-.dark-theme .degree,
 .dark-theme .skill-card,
 .dark-theme .timeline-card {
     background-color: var(--card-bg);
