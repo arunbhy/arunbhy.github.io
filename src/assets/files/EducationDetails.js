@@ -1,7 +1,7 @@
 const education = [
     {
         name: "University of Maryland",
-        time: "August 2024 - Present",
+        time: "August 2024 - May 2026",
         location: "College Park, MD, United States of America",
         degree: "Master of Science in Data Science",
         image: "images/umd.webp",
@@ -11,6 +11,7 @@ const education = [
             "Data Representation and Modeling",
             "Big Data Systems",
             "Algorithms of Data Science",
+            "Computer Vision"
         ],
     },
     {

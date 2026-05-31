@@ -18,10 +18,15 @@ const Home = () => {
             1000,
             'I am an Agentic AI Developer.',
             1000,
-            'I am a Nerd.',
+            'I am a Developer.',
             1000,
-            'I am a Student.',
-            1000
+            'I am a Problem Solver.',
+            1000,
+            'I am a Learner.',
+            1000,
+            'I am a Dreamer.',
+            1000,
+            
           ]}
           wrapper="div"
           speed={10}
