@@ -1,5 +1,42 @@
 const projectList = [
     {
+        title: `ThirdEye`,
+        subtitle: `Spatial-Temporal Geolocation Workstation`,
+        time: `Apr 2026 - Present`,
+        summary: `Built a spatial-temporal RAG tool and AI workstation for verifying street-level imagery. The system leverages dense geometric matching and advanced computer vision to analyze geographic data and provide highly precise structural-surface verification.`,
+        image: `images/thirdeye_logo.webp`,
+        // link: `https://github.com/kautilyaa/ThirdEye`,
+        tags: ['Python', 'Computer Vision', 'RAG', 'Spatial Analysis']
+    },
+    {
+        title: `StellarSeek`,
+        subtitle: `Vedic Astrology & Planetary Calculation Platform`,
+        time: `March 2026 - May 2026`,
+        summary: `Created a full-stack platform utilizing the Swiss Ephemeris for precise planetary calculations. The application features a Retrieval-Augmented Generation (RAG) chat interface and interactive visualizations to deliver personalized astrological insights.`,
+        image: `images/stellarseek_logo.webp`,
+        link: `https://stellarseek.arunbhy.com/`,
+        tags: ['Python', 'FastAPI', 'React', 'D3.js', 'RAG']
+    },
+    {
+        title: `TERminus`,
+        subtitle: `Modular AI Agent Framework`,
+        time: `September 2025 - April 2026`,
+        summary: `Extended experimental design into modular local AI agent framework aimed at structured reasoning and controlled execution. System emphasized flexibility, allowing tools and data sources to be composed dynamically while maintaining clear boundaries between reasoning and action. Project explored how agent-based architectures could support experimentation, automation, and reproducibility in local development setting.`,
+        image: `images/terminus_logo.webp`,
+        link: `https://github.com/kautilyaa/TERMINUS`,
+        tags: ['Python', 'LLMs', 'Agent Framework', 'RAG']
+    },
+    {
+        title: `SmritiMeds`,
+        subtitle: `Medication Management & Verification Application`,
+        time: `April 2026`,
+        summary: `Developed a medication management application focused on patient safety. The system utilizes advanced computer vision techniques based on recent research papers for accurate prescription label extraction and pill verification.`,
+        image: `images/smritimeds_logo.webp`,
+        link: `https://github.com/kautilyaa/SmritiMeds`,
+        tags: ['Python', 'Computer Vision', 'Healthcare', 'AI Verification']
+    },
+    
+    {
         title: `SafeSim`,
         subtitle: `Medical Text Simplification System`,
         time: `November 2025`,
@@ -8,15 +45,7 @@ const projectList = [
         link: `https://github.com/kautilyaa/safesim`,
         tags: ['Python', 'NLP', 'Transformers', 'spaCy', 'BERT']
     },
-    {
-        title: `TERminus`,
-        subtitle: `Modular AI Agent Framework`,
-        time: `September 2025 - November 2025`,
-        summary: `Extended experimental design into modular local AI agent framework aimed at structured reasoning and controlled execution. System emphasized flexibility, allowing tools and data sources to be composed dynamically while maintaining clear boundaries between reasoning and action. Project explored how agent-based architectures could support experimentation, automation, and reproducibility in local development setting.`,
-        image: `images/terminus_logo.webp`,
-        link: `https://github.com/kautilyaa/TERMINUS`,
-        tags: ['Python', 'LLMs', 'Agent Framework', 'RAG']
-    },
+    
     {
         title: `TravelGenie`,
         subtitle: `AI-Powered Travel Planning System`,
