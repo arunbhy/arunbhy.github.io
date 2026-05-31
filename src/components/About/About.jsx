@@ -10,7 +10,7 @@ const About = () => {
             </div>
             <div className="about-content">
                 <div className="about-left">
-                    <img src="images/pfp.webp" alt="Profile picture not available" />
+                    <img src="images/pfp.JPG" alt="Profile picture not available" />
                 </div>
                 <div className="about-right">
                     <p>
