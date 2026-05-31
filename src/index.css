@@ -696,9 +696,74 @@ a {
     color: var(--muted);
 }
 
+/* ---------- project cards: click-to-expand accordion ---------- */
+.pcard { cursor: pointer; }
+
+.pcard .pmeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: 124px;
+}
+
+.pcard .pmeta .pchevron {
+    font-family: var(--mono);
+    color: var(--muted);
+    transition: transform .3s ease, color .3s ease;
+}
+
+.pcard.open .pmeta .pchevron {
+    transform: rotate(180deg);
+    color: var(--accent);
+}
+
+.pcard-detail {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .4s ease, opacity .4s ease, margin .4s ease;
+}
+
+.pcard.open .pcard-detail {
+    max-height: 720px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.pcard-detail-inner {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+}
+
+.pcard-pic {
+    width: 170px;
+    flex: none;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: var(--card-bg);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.pcard-detail-text { min-width: 0; }
+
+.pcard-detail-text .plinks {
+    flex-direction: row;
+    text-align: left;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    min-width: 0;
+}
+
 @media (max-width: 780px) {
     .pcard { grid-template-columns: 1fr; gap: 14px; }
-    .pcard .plinks { flex-direction: row; text-align: left; gap: 20px; flex-wrap: wrap; }
+    .pcard .pmeta { flex-direction: row; align-items: center; min-width: 0; }
+    .pcard-detail-inner { flex-direction: column; }
+    .pcard-pic { width: 120px; }
 }
 
 /* ---------- skills ---------- */

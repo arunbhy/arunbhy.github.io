@@ -3,37 +3,58 @@ import useInView from "../../hooks/useInView";
 import "./Projects.css";
 import projectList from "../../assets/files/ProjectDetails.js";
 
-const ProjectCard = ({ project, num }) => {
+const ProjectCard = ({ project, num, expanded, onToggle }) => {
     const [ref, inView] = useInView();
 
     return (
-        <div ref={ref} className={`pcard rev ${inView ? "in" : ""}`}>
+        <div
+            ref={ref}
+            className={`pcard rev ${inView ? "in" : ""} ${expanded ? "open" : ""}`}
+            onClick={onToggle}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onToggle(); } }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded}
+        >
             <span className="pnum">{String(num).padStart(2, "0")}</span>
 
             <div className="pbody">
                 <h3>{project.title}</h3>
                 <div className="psub">{project.subtitle}</div>
-                <p>{project.summary}</p>
-                {project.tags && (
-                    <div className="tags">
-                        {project.tags.map((tag, i) => (
-                            <span className="tag" key={i}>{tag}</span>
-                        ))}
+
+                <div className="pcard-detail">
+                    <div className="pcard-detail-inner">
+                        {project.image && (
+                            <img className="pcard-pic" src={project.image} alt={project.title} loading="lazy" />
+                        )}
+                        <div className="pcard-detail-text">
+                            <p>{project.summary}</p>
+                            {project.tags && (
+                                <div className="tags">
+                                    {project.tags.map((tag, i) => (
+                                        <span className="tag" key={i}>{tag}</span>
+                                    ))}
+                                </div>
+                            )}
+                            <div className="plinks">
+                                {project.link && (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer">Repository →</a>
+                                )}
+                                {project.website && (
+                                    <a href={project.website} target="_blank" rel="noopener noreferrer">Website →</a>
+                                )}
+                                {project.liveLink && (
+                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">Live demo →</a>
+                                )}
+                            </div>
+                        </div>
                     </div>
-                )}
+                </div>
             </div>
 
-            <div className="plinks">
+            <div className="pmeta">
                 <span className="pyear">{project.time}</span>
-                {project.link && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">Repository →</a>
-                )}
-                {project.website && (
-                    <a href={project.website} target="_blank" rel="noopener noreferrer">Website →</a>
-                )}
-                {project.liveLink && (
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">Live demo →</a>
-                )}
+                <span className="pchevron">↓</span>
             </div>
         </div>
     );
@@ -41,7 +62,10 @@ const ProjectCard = ({ project, num }) => {
 
 const Projects = () => {
     const [showAll, setShowAll] = useState(false);
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const displayed = showAll ? projectList : projectList.slice(0, 4);
+
+    const toggle = (i) => setExpandedIndex(expandedIndex === i ? null : i);
 
     return (
         <section id="projects" className="ed-section">
@@ -52,7 +76,13 @@ const Projects = () => {
                 </div>
 
                 {displayed.map((project, index) => (
-                    <ProjectCard key={index} project={project} num={index + 1} />
+                    <ProjectCard
+                        key={index}
+                        project={project}
+                        num={index + 1}
+                        expanded={expandedIndex === index}
+                        onToggle={() => toggle(index)}
+                    />
                 ))}
 
                 {projectList.length > 4 && (
