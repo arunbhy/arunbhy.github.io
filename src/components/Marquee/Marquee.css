@@ -1,0 +1,45 @@
+.marquee {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 18px 0;
+    position: relative;
+}
+
+.marquee .track {
+    display: inline-flex;
+    gap: 42px;
+    padding-left: 42px;
+    animation: marquee-scroll 28s linear infinite;
+    will-change: transform;
+}
+
+.marquee:hover .track {
+    animation-play-state: paused;
+}
+
+.marquee .m-item {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--text-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.marquee .m-item::after {
+    content: "\25C6"; /* ◆ */
+    color: var(--accent);
+    font-size: .7rem;
+    font-style: normal;
+}
+
+@keyframes marquee-scroll {
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee .track { animation: none; }
+}

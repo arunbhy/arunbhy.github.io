@@ -21,95 +21,74 @@ const parseStartDate = (timeStr) => {
     return new Date(0);
 };
 
-const formatYear = (timeStr) => {
-    const clean = timeStr.split("·")[0].split("-")[0].trim();
-    const parts = clean.split(/\s+/);
-    return parts.length >= 2 ? parts[1] : "";
+// "April 2023 - June 2024" -> "2023–24"; "Apr 2026 - Present" -> "2026–"
+const formatRange = (timeStr) => {
+    const base = timeStr.split("·")[0].trim();
+    const segs = base.split("-").map((s) => s.trim());
+    const yearOf = (s) => {
+        const m = s.match(/\b(19|20)\d{2}\b/);
+        return m ? m[0] : (/present|now|current/i.test(s) ? "" : "");
+    };
+    const start = yearOf(segs[0]);
+    const end = segs[1] ? yearOf(segs[1]) : start;
+    if (!start) return base;
+    if (!end) return `${start}–`;
+    if (end === start) return start;
+    return `${start}–${end.slice(2)}`;
 };
 
-const TimelineItem = ({ item, index, expanded, onToggle }) => {
-    const [ref, isInView] = useInView();
-    const side = index % 2 === 0 ? "left" : "right";
+const XpRow = ({ item, index, expanded, onToggle }) => {
+    const [ref, inView] = useInView();
 
     return (
         <div
             ref={ref}
-            className={`timeline-item timeline-${side} ${isInView ? "animate-in" : ""}`}
-            style={{ transitionDelay: `${index * 100}ms` }}
+            className={`xp-row rev ${inView ? "in" : ""} ${expanded ? "open" : ""}`}
+            style={{ transitionDelay: `${index * 70}ms` }}
+            onClick={onToggle}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onToggle(); } }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded}
         >
-            <div className="timeline-dot-wrapper">
-                <div className={`timeline-dot timeline-dot--${item.type}`}>
-                    <i className={item.icon}></i>
+            <div className="xp-year">{item.range}</div>
+
+            <div className="xp-main">
+                <h3>{item.title}</h3>
+                <div className="xp-org">{item.org}</div>
+
+                <div className="xp-detail">
+                    <p className="xp-loc">{item.time}{item.location ? ` · ${item.location}` : ""}</p>
+                    {item.summary && item.summary.split("\n").map((line, i) => (
+                        <p key={i}>{line}</p>
+                    ))}
+                    {item.coursework && (
+                        <div className="xp-course">
+                            {item.coursework.map((c, i) => (
+                                <span className="tag" key={i}>{c}</span>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
-            <div
-                className={`timeline-card timeline-card--${item.type} ${expanded ? "timeline-card--expanded" : ""}`}
-                onClick={onToggle}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
-                role="button"
-                tabIndex={0}
-                aria-expanded={expanded}
-            >
-                <div className="timeline-card-header">
-                    <div className="timeline-card-header-text">
-                        <span className="timeline-year">{item.year}</span>
-                        <h3 className="timeline-title">{item.title}</h3>
-                        <p className="timeline-subtitle">{item.subtitle}</p>
-                    </div>
-                    <i className={`fa-solid fa-chevron-${expanded ? "up" : "down"} timeline-chevron`}></i>
-                </div>
 
-                {expanded && (
-                    <div className="timeline-expanded">
-                        {item.image && (
-                            <img src={item.image} alt={item.title} className="timeline-expanded-img" loading="lazy" />
-                        )}
-                        {item.time && (
-                            <p className="timeline-time">
-                                <i className="fa-regular fa-calendar"></i> {item.time}
-                            </p>
-                        )}
-                        {item.location && (
-                            <p className="timeline-location">
-                                <i className="fa-solid fa-location-dot"></i> {item.location}
-                            </p>
-                        )}
-                        {item.summary && (
-                            <div className="timeline-summary">
-                                {item.summary.split("\n").map((line, i) => (
-                                    <p key={i}>{line}</p>
-                                ))}
-                            </div>
-                        )}
-                        {item.coursework && (
-                            <div className="timeline-coursework">
-                                <p className="timeline-coursework-label">Coursework</p>
-                                <ul>
-                                    {item.coursework.map((course, i) => (
-                                        <li key={i}>{course}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
-                )}
+            <div className="xp-kind">
+                {item.kind}
+                <span className="xp-chevron">↓</span>
             </div>
         </div>
     );
 };
 
 const Timeline = () => {
-    const [titleRef, titleInView] = useInView();
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const items = useMemo(() => {
         const workItems = work.map((w) => ({
-            type: "work",
-            icon: "fa-solid fa-briefcase",
-            year: formatYear(w.time),
+            kind: "Work",
+            range: formatRange(w.time),
             title: w.role,
-            subtitle: w.name,
-            image: w.image,
+            org: w.name,
             time: w.time,
             location: w.location,
             summary: w.summary,
@@ -117,12 +96,10 @@ const Timeline = () => {
         }));
 
         const eduItems = education.map((e) => ({
-            type: "education",
-            icon: "fa-solid fa-graduation-cap",
-            year: formatYear(e.time),
+            kind: "Education",
+            range: formatRange(e.time),
             title: e.degree,
-            subtitle: e.name,
-            image: e.image,
+            org: e.name,
             time: e.time,
             location: e.location,
             coursework: e.coursework,
@@ -132,26 +109,26 @@ const Timeline = () => {
         return [...workItems, ...eduItems].sort((a, b) => b.sortDate - a.sortDate);
     }, []);
 
-    const toggleExpand = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
-    };
+    const toggle = (i) => setExpandedIndex(expandedIndex === i ? null : i);
 
     return (
-        <section id="timeline" className="timeline-section">
-            <h1 ref={titleRef} className={titleInView ? "animate-in" : ""}>
-                MY JOURNEY
-            </h1>
-            <div className="timeline-container">
-                <div className="timeline-line"></div>
-                {items.map((item, index) => (
-                    <TimelineItem
-                        key={index}
-                        item={item}
-                        index={index}
-                        expanded={expandedIndex === index}
-                        onToggle={() => toggleExpand(index)}
-                    />
-                ))}
+        <section id="timeline" className="ed-section">
+            <div className="wrap">
+                <div className="sec-head">
+                    <h2>Experience</h2>
+                    <span className="idx">02 / 06</span>
+                </div>
+                <div className="xp-list">
+                    {items.map((item, index) => (
+                        <XpRow
+                            key={index}
+                            item={item}
+                            index={index}
+                            expanded={expandedIndex === index}
+                            onToggle={() => toggle(index)}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );

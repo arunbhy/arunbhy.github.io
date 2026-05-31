@@ -2,18 +2,17 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Navigation from "./components/Navigation/Navigation";
+import MotionFX from "./components/MotionFX/MotionFX";
 import Home from "./components/Home/Home";
+import Marquee from "./components/Marquee/Marquee";
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+import Timeline from "./components/Timeline/Timeline";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
-import BackgroundEffects from "./components/BackgroundEffects/BackgroundEffects";
 import Achievements from "./components/Achievements/Achievements";
-import Timeline from "./components/Timeline/Timeline";
-import SectionDivider from "./components/SectionDivider/SectionDivider";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
-import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 
 const App = () => {
@@ -31,17 +30,17 @@ const App = () => {
   return (
     <>
       <a href="#about" className="skip-to-content">Skip to content</a>
-      <BackgroundEffects />
+      <MotionFX />
+      <span className="coord tl">Lat 38.99°N · Lon 76.94°W</span>
+      <span className="coord br">© {new Date().getFullYear()} · College Park, MD</span>
       <Navigation />
       <main>
         <Home />
+        <Marquee />
         <About />
-        <SectionDivider type="scatter" />
         <Timeline />
-        <SectionDivider type="loss" />
-        <Skills />
-        <SectionDivider type="grid" />
         <Projects />
+        <Skills />
         <Achievements />
         <Contact />
       </main>

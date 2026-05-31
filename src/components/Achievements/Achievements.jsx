@@ -1,42 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import achievements from '../../assets/files/AchievementsDetails';
-import ButtonLight from '../ButtonLight/ButtonLight';
 import useInView from '../../hooks/useInView';
 import './Achievements.css';
 
-const AchievementCard = ({ achievement, index }) => {
-    const [ref, isInView] = useInView();
-
-    const handleImageError = (e) => {
-        e.target.src = 'images/logo.webp';
-    };
+const AchievementCard = ({ achievement, num }) => {
+    const [ref, inView] = useInView();
 
     return (
-        <div
-            ref={ref}
-            className={`achievement-card ${isInView ? 'animate-in' : ''}`}
-            style={{ transitionDelay: `${index * 100}ms` }}
-        >
-            <div className="achievement-card-left">
-                <img
-                    src={achievement.image}
-                    alt={achievement.type}
-                    loading="lazy"
-                    onError={handleImageError}
-                />
-            </div>
-            <div className="achievement-card-right">
-                <div className="achievement-card-right-header">
-                    <h3>{achievement.type}</h3>
-                    <span>{achievement.year}</span>
-                </div>
-                <h4>{achievement.organization}</h4>
+        <div ref={ref} className={`pcard rev ${inView ? 'in' : ''}`}>
+            <span className="pnum">{String(num).padStart(2, '0')}</span>
+
+            <div className="pbody">
+                <h3>{achievement.type}</h3>
+                <div className="psub">{achievement.organization}</div>
                 <p>{achievement.summary}</p>
+            </div>
+
+            <div className="plinks">
+                <span className="pyear">{achievement.year}</span>
                 {achievement.link && (
-                    <ButtonLight
-                        text={achievement.linkText || "View Details"}
-                        link={achievement.link}
-                    />
+                    <a href={achievement.link} target="_blank" rel="noopener noreferrer">
+                        {(achievement.linkText || 'View')} →
+                    </a>
                 )}
             </div>
         </div>
@@ -44,28 +29,17 @@ const AchievementCard = ({ achievement, index }) => {
 };
 
 const Achievements = () => {
-    const [showAllAchievements, setShowAllAchievements] = useState(false);
-    const [titleRef, titleInView] = useInView();
-
-    const toggleAchievements = () => {
-        setShowAllAchievements(!showAllAchievements);
-    };
-
-    const displayedAchievements = showAllAchievements ? achievements : achievements.slice(0, 3);
-
     return (
-        <section id="achievements" className="achievements">
-            <h1 ref={titleRef} className={titleInView ? 'animate-in' : ''}>ACHIEVEMENTS</h1>
-            {displayedAchievements.map((achievement, index) => (
-                <AchievementCard key={index} achievement={achievement} index={index} />
-            ))}
-            {achievements.length > 3 && (
-                <div className="toggle-button" onClick={toggleAchievements}>
-                    <ButtonLight
-                        text={showAllAchievements ? "Show Less" : "Show More"}
-                    />
+        <section id="achievements" className="ed-section">
+            <div className="wrap">
+                <div className="sec-head">
+                    <h2>Recognition</h2>
+                    <span className="idx">05 / 06</span>
                 </div>
-            )}
+                {achievements.map((achievement, index) => (
+                    <AchievementCard key={index} achievement={achievement} num={index + 1} />
+                ))}
+            </div>
         </section>
     );
 };

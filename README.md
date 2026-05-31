@@ -1,148 +1,55 @@
-# Portfolio Website
+# arunbhy.github.io
 
-A modern, responsive portfolio website built with React and Vite, featuring a clean design and smooth animations.
+My personal portfolio. A single-page site that covers my work, projects, writing and
+contact details, with a light and dark theme. Built with React and Vite.
 
-## Features
+Live at https://arunbhy.github.io and https://arunbhy.com.
 
-- 🌓 Dark/Light mode toggle
-- 📱 Fully responsive design
-- 🎨 Modern UI with smooth animations
-- 📝 Sections for About, Skills, Projects, Education, Achievements, and Contact
-- 🔗 Social media integration
-- 🎯 Smooth scrolling navigation
-- ✨ Framer Motion animations for enhanced user experience
+## Tech stack
 
-## Tech Stack
+- React 19
+- Vite 8
+- React Router (HashRouter) for the blog routes
+- Bootstrap and plain CSS for styling
+- React Type Animation for the hero
+- Formspree for the contact form
 
-- React.js
-- Vite
-- Bootstrap
-- CSS3
-- React Type Animation
-- React Bootstrap
-- React Anchor Link Smooth Scroll
-- Framer Motion
+## Running locally
 
-## Prerequisites
+You need Node 18 or higher and npm.
 
-Before you begin, ensure you have the following installed:
-- Node.js (v14.0.0 or higher)
-- npm (v6.0.0 or higher)
-- Git
-
-## Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/arunbhy/arunbhy.github.io.git
+cd arunbhy.github.io
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:5173`
+The dev server runs at http://localhost:5173.
 
-## Project Structure
+## Build and deploy
 
-```
-portfolio/
-├── src/
-│   ├── components/     # React components
-│   ├── assets/        # Images and other static files
-│   ├── context/       # React context providers
-│   ├── App.jsx        # Main App component
-│   └── main.jsx       # Entry point
-├── public/            # Static files
-└── index.html         # HTML template
-```
+The site deploys to GitHub Pages from the `dist` build.
 
-## Deployment Guide
-
-### Deploying to GitHub Pages
-
-1. Install GitHub Pages package:
 ```bash
-npm install gh-pages --save-dev
+npm run build   # output goes to dist/
+npm run deploy  # publishes dist/ via gh-pages
 ```
 
-2. Update package.json (already configured):
-```json
-{
-  "homepage": "https://your-username.github.io/portfolio/",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
+## Where the content lives
 
-3. Build and deploy:
-```bash
-npm run build
-npm run deploy
-```
-
-4. Configure GitHub Repository:
-   - Go to repository Settings > Pages
-   - Select "gh-pages" branch as source
-   - Wait for deployment (usually takes a few minutes)
-
-### Alternative Deployment Options
-
-#### Netlify
-1. Create a Netlify account
-2. Connect your GitHub repository
-3. Configure build settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-
-#### Vercel
-1. Install Vercel CLI:
-```bash
-npm install -g vercel
-```
-2. Deploy:
-```bash
-vercel
-```
-
-## Customization
-
-### Changing Content
-- Update text content in respective component files
-- Modify images in the `src/assets` directory
-- Update project details in `src/assets/files/ProjectDetails.js`
-- Update skills in `src/assets/files/SkillsDetails.js`
-- Update achievements in `src/assets/files/AchievementsDetails.js`
-
-### Styling
-- Main styles are in individual component CSS files
-- Global styles in `src/App.css`
-- Theme colors can be modified in CSS variables
-- Animation configurations can be adjusted in component files
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Hero copy: `src/components/Home/Home.jsx`
+- About: `src/components/About/About.jsx`
+- Projects: `src/assets/files/ProjectDetails.js`
+- Work history: `src/assets/files/WorkDetails.js`
+- Education: `src/assets/files/EducationDetails.js`
+- Skills: `src/assets/files/SkillsDetails.js`
+- Achievements: `src/assets/files/AchievementsDetails.js`
+- Blog posts: `public/blog/posts.json` and the Markdown in `public/blog/`
+- Theme colours: CSS variables in `src/index.css`
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
-
-Project Link: [https://github.com/your-username/portfolio](https://github.com/your-username/portfolio) 
+Arunbh Yashaswi
+- Email: arunbh.y@gmail.com
+- GitHub: https://github.com/kautilyaa

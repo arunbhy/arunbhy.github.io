@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.css';
 import AppRouter from './AppRouter.jsx'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx'
 import { ThemeProvider } from './context/ThemeContext'
